@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://space.jpg" type="Texture" id=1]
 [ext_resource path="res://PNG/Ground/Planet/planetMid.png" type="Texture" id=2]
@@ -77,6 +77,21 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.5, 45.5 )
 
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+
+void fragment(){
+	vec4 pixel = texture(TEXTURE, UV);
+	if (UV.y < 0.4){
+		COLOR = pixel
+	}else{
+		COLOR = vec4(0);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 48 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 56 ), ExtResource( 55 ) ],
@@ -125,7 +140,7 @@ modulate = Color( 1, 1, 1, 0.443137 )
 position = Vector2( 512.5, 256 )
 scale = Vector2( 2.06225, 1.78873 )
 frames = SubResource( 5 )
-frame = 13
+frame = 7
 playing = true
 
 [node name="fake-fuego" type="AnimatedSprite" parent="fondo"]
@@ -135,6 +150,7 @@ position = Vector2( 728, 465 )
 rotation = 3.13883
 scale = Vector2( 1.32576, 4.92793 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="suelo" type="StaticBody2D" parent="."]
@@ -165,10 +181,11 @@ offset = Vector2( 61.7634, 141.222 )
 
 [node name="real-fire" type="AnimatedSprite" parent="crateres"]
 modulate = Color( 0.741176, 0.34902, 0.741176, 0.67451 )
+material = SubResource( 9 )
 position = Vector2( 729, 542 )
 scale = Vector2( 0.0824196, 1 )
 frames = SubResource( 7 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="crat-top" type="Sprite" parent="crateres"]
@@ -207,7 +224,7 @@ __meta__ = {
 position = Vector2( 948, 522 )
 scale = Vector2( 0.760828, 0.855078 )
 frames = SubResource( 2 )
-frame = 6
+frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="nave"]

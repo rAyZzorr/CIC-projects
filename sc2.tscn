@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://PNG/Ground/Grass/grassMid.png" type="Texture" id=1]
 [ext_resource path="res://PNG/Sprites X2/Meteors/spaceMeteors_002.png" type="Texture" id=2]
@@ -10,10 +10,30 @@
 [ext_resource path="res://PNG/Sprites X2/Meteors/broke.png" type="Texture" id=8]
 [ext_resource path="res://sky1.jpg" type="Texture" id=9]
 [ext_resource path="res://PNG/Sprites X2/Meteors/broke2.png" type="Texture" id=10]
+[ext_resource path="res://PNG/Tiles/doorClosed_top.png" type="Texture" id=11]
+[ext_resource path="res://PNG/Tiles/doorClosed_mid.png" type="Texture" id=12]
+[ext_resource path="res://PNG/Tiles/doorOpen_mid.png" type="Texture" id=13]
+[ext_resource path="res://PNG/Tiles/doorOpen_top.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -36,13 +56,27 @@ extents = Vector2( 6.5, 155.5 )
 [node name="sc2" type="Node2D"]
 
 [node name="fondo" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="fondo"]
 position = Vector2( 488, -313.733 )
 scale = Vector2( 1, 1.00556 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 offset = Vector2( 471, 312 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="fondo"]
+position = Vector2( 30.75, 490 )
+scale = Vector2( 0.488281, 0.78125 )
+frames = SubResource( 5 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="fondo"]
+position = Vector2( 30.75, 409.75 )
+scale = Vector2( 0.488281, 0.542969 )
+frames = SubResource( 6 )
 
 [node name="suelo" type="StaticBody2D" parent="."]
 
