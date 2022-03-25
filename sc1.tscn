@@ -1,0 +1,1243 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://PNG/Ground/Stone/stone.png" type="Texture" id=1]
+[ext_resource path="res://PNG/Ground/Stone/stoneHalf.png" type="Texture" id=2]
+[ext_resource path="res://vecteezy_stone-tiles-texture-in-cartoon-style_3678912.jpg" type="Texture" id=3]
+[ext_resource path="res://PNG/Tiles/lavaTop_high.png" type="Texture" id=4]
+[ext_resource path="res://PNG/Tiles/lavaTop_low.png" type="Texture" id=5]
+[ext_resource path="res://PNG/Tiles/torch1.png" type="Texture" id=6]
+[ext_resource path="res://PNG/Tiles/window.png" type="Texture" id=7]
+[ext_resource path="res://PNG/Tiles/lava.png" type="Texture" id=8]
+[ext_resource path="res://PNG/Tiles/torch2.png" type="Texture" id=9]
+[ext_resource path="res://win.png" type="Texture" id=10]
+[ext_resource path="res://PNG/Tiles/ladderMid.png" type="Texture" id=11]
+[ext_resource path="res://PNG/Tiles/boxCrate_double.png" type="Texture" id=12]
+[ext_resource path="res://wall p2.webp" type="Texture" id=13]
+[ext_resource path="res://PNG/Tiles/doorOpen_mid.png" type="Texture" id=14]
+[ext_resource path="res://PNG/Tiles/doorClosed_mid.png" type="Texture" id=15]
+[ext_resource path="res://PNG/Tiles/doorClosed_top.png" type="Texture" id=16]
+[ext_resource path="res://PNG/Tiles/doorOpen_top.png" type="Texture" id=17]
+[ext_resource path="res://PNG/Tiles/spikes.png" type="Texture" id=18]
+[ext_resource path="res://PNG/HUD/hudKey_yellow.png" type="Texture" id=19]
+[ext_resource path="res://PNG/HUD/hudKey_yellow_empty.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 335, 22.5 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 57.5, 23 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 119, 22.5 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 19, 44.25 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="sc1" type="Node2D"]
+
+[node name="decorado" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="pared" type="Node2D" parent="decorado"]
+position = Vector2( -1, -2 )
+
+[node name="wall1" type="Sprite" parent="decorado/pared"]
+position = Vector2( 92, 368 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall2" type="Sprite" parent="decorado/pared"]
+position = Vector2( 450, 367 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall3" type="Sprite" parent="decorado/pared"]
+position = Vector2( 271, 367 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall4" type="Sprite" parent="decorado/pared"]
+position = Vector2( 91, 458 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall5" type="Sprite" parent="decorado/pared"]
+position = Vector2( 271, 457 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall6" type="Sprite" parent="decorado/pared"]
+position = Vector2( 808, 457 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall7" type="Sprite" parent="decorado/pared"]
+position = Vector2( 808, 367 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall8" type="Sprite" parent="decorado/pared"]
+position = Vector2( 451, 548 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall9" type="Sprite" parent="decorado/pared"]
+position = Vector2( 629, 458 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall10" type="Sprite" parent="decorado/pared"]
+position = Vector2( 271, 548 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall11" type="Sprite" parent="decorado/pared"]
+position = Vector2( 629, 367 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall12" type="Sprite" parent="decorado/pared"]
+position = Vector2( 91, 549 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall13" type="Sprite" parent="decorado/pared"]
+position = Vector2( 450, 458 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall15" type="Sprite" parent="decorado/pared"]
+position = Vector2( 986, 547 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall16" type="Sprite" parent="decorado/pared"]
+position = Vector2( 986, 457 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall17" type="Sprite" parent="decorado/pared"]
+position = Vector2( 807, 548 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall18" type="Sprite" parent="decorado/pared"]
+position = Vector2( 630, 549 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall19" type="Sprite" parent="decorado/pared"]
+position = Vector2( 988, 367 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="wall20" type="Sprite" parent="decorado/pared"]
+position = Vector2( 988, 330 )
+scale = Vector2( 0.0940104, 0.0520301 )
+texture = ExtResource( 3 )
+
+[node name="antorcha" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 39, 441 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="antorcha2" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 931, 441 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="antorcha3" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 781, 441 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="antorcha4" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 627, 441 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="antorcha5" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 480, 441 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="antorcha6" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 178, 441 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="antorcha7" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 304, 441 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="ventanas" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 106, 376.25 )
+scale = Vector2( 0.304688, 0.496093 )
+frames = SubResource( 2 )
+
+[node name="ventanas2" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 934, 376.25 )
+scale = Vector2( 0.304688, 0.496093 )
+frames = SubResource( 2 )
+
+[node name="ventanas3" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 799, 376.25 )
+scale = Vector2( 0.304688, 0.496093 )
+frames = SubResource( 2 )
+
+[node name="ventanas4" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 658, 376.25 )
+scale = Vector2( 0.304688, 0.496093 )
+frames = SubResource( 2 )
+
+[node name="ventanas5" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 514, 376.25 )
+scale = Vector2( 0.304688, 0.496093 )
+frames = SubResource( 2 )
+
+[node name="ventanas6" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 377, 376.25 )
+scale = Vector2( 0.304688, 0.496093 )
+frames = SubResource( 2 )
+
+[node name="ventanas7" type="AnimatedSprite" parent="decorado"]
+position = Vector2( 238, 376.25 )
+scale = Vector2( 0.304688, 0.496093 )
+frames = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="decorado"]
+margin_left = 236.0
+margin_top = 590.0
+margin_right = 912.0
+margin_bottom = 599.0
+color = Color( 0.67451, 0.752941, 0.756863, 1 )
+
+[node name="decorado2" type="Node2D" parent="."]
+position = Vector2( 3, -6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="pared" type="Node2D" parent="decorado2"]
+
+[node name="madera" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 961.674, 47.6538 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera2" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 835, 48 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera5" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 707, 90 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera15" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 707, -4 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera11" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 580.163, 142 )
+scale = Vector2( 0.3659, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera14" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 455, 121 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera16" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 455, 215 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera17" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 455, 286.827 )
+scale = Vector2( 0.376771, 0.148953 )
+texture = ExtResource( 13 )
+
+[node name="madera12" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 580.163, 236 )
+scale = Vector2( 0.3659, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera8" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 580.163, 48 )
+scale = Vector2( 0.3659, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera13" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 455, 27 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera18" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 328, 48 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera21" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 201, 48 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera25" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 74, 116 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera26" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 74, 210 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera27" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 74, 282.827 )
+scale = Vector2( 0.376771, 0.15487 )
+texture = ExtResource( 13 )
+
+[node name="madera24" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 74, 22 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera28" type="Sprite" parent="decorado2/pared"]
+position = Vector2( -53, 47 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera29" type="Sprite" parent="decorado2/pared"]
+position = Vector2( -53, 141 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera30" type="Sprite" parent="decorado2/pared"]
+position = Vector2( -52.6629, 235 )
+scale = Vector2( 0.374776, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera19" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 328, 142 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera22" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 201, 142 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera20" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 328, 236 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera23" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 201, 236 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera6" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 708, 183 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera7" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 707.837, 273.827 )
+scale = Vector2( 0.371817, 0.261379 )
+texture = ExtResource( 13 )
+
+[node name="madera3" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 835, 142 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera4" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 835, 236 )
+scale = Vector2( 0.376771, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera9" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 961.337, 236 )
+scale = Vector2( 0.374776, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="madera10" type="Sprite" parent="decorado2/pared"]
+position = Vector2( 961.337, 142 )
+scale = Vector2( 0.374776, 0.280155 )
+texture = ExtResource( 13 )
+
+[node name="antorcha" type="AnimatedSprite" parent="decorado2"]
+position = Vector2( 77.5, 152.5 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="antorcha2" type="AnimatedSprite" parent="decorado2"]
+position = Vector2( 969.5, 152.5 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="antorcha4" type="AnimatedSprite" parent="decorado2"]
+position = Vector2( 665.5, 152.5 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="antorcha5" type="AnimatedSprite" parent="decorado2"]
+position = Vector2( 518.5, 152.5 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="antorcha6" type="AnimatedSprite" parent="decorado2"]
+position = Vector2( 216.5, 152.5 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="antorcha7" type="AnimatedSprite" parent="decorado2"]
+position = Vector2( 342.5, 152.5 )
+scale = Vector2( 0.304688, 0.273438 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="ventana" type="Sprite" parent="decorado2"]
+position = Vector2( 900, 64 )
+scale = Vector2( 0.223333, 0.316308 )
+texture = ExtResource( 10 )
+
+[node name="ventana2" type="Sprite" parent="decorado2"]
+position = Vector2( 738, 65 )
+scale = Vector2( 0.223333, 0.316308 )
+texture = ExtResource( 10 )
+
+[node name="ventana3" type="Sprite" parent="decorado2"]
+position = Vector2( 558, 64 )
+scale = Vector2( 0.223333, 0.316308 )
+texture = ExtResource( 10 )
+
+[node name="ventana4" type="Sprite" parent="decorado2"]
+position = Vector2( 336, 63 )
+scale = Vector2( 0.223333, 0.316308 )
+texture = ExtResource( 10 )
+
+[node name="ventana5" type="Sprite" parent="decorado2"]
+position = Vector2( 142, 63 )
+scale = Vector2( 0.223333, 0.316308 )
+texture = ExtResource( 10 )
+
+[node name="problemas" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lava" type="StaticBody2D" parent="problemas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="problemas/Lava"]
+position = Vector2( 573, 577 )
+shape = SubResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="problemas/Lava"]
+position = Vector2( 318.5, 572.25 )
+scale = Vector2( 1.28906, 0.292969 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="problemas/Lava"]
+position = Vector2( 819.75, 572 )
+scale = Vector2( 1.42578, 0.292969 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="problemas/Lava"]
+position = Vector2( 647, 572 )
+scale = Vector2( 1.28906, 0.292969 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="problemas/Lava"]
+position = Vector2( 483, 572 )
+scale = Vector2( 1.28906, 0.292969 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="suelo" type="StaticBody2D" parent="."]
+position = Vector2( 0, -2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="suelo"]
+position = Vector2( 966.5, 577 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo"]
+position = Vector2( 120, 577.5 )
+shape = SubResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="suelo"]
+margin_top = 555.0
+margin_right = 236.0
+margin_bottom = 601.0
+color = Color( 0.631373, 0.694118, 0.694118, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="suelo"]
+margin_left = 912.0
+margin_top = 555.0
+margin_right = 1024.0
+margin_bottom = 601.0
+color = Color( 0.631373, 0.694118, 0.694118, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="suelo"]
+position = Vector2( 24, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="suelo"]
+position = Vector2( 215, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="suelo"]
+position = Vector2( 167, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="suelo"]
+position = Vector2( 120, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite18" type="AnimatedSprite" parent="suelo"]
+position = Vector2( 72, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite20" type="AnimatedSprite" parent="suelo"]
+position = Vector2( 1015, 577 )
+scale = Vector2( 0.140625, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite21" type="AnimatedSprite" parent="suelo"]
+position = Vector2( 982, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite22" type="AnimatedSprite" parent="suelo"]
+position = Vector2( 934, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="suelo2" type="StaticBody2D" parent="."]
+position = Vector2( -1, -280 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo2"]
+position = Vector2( 492.75, 577.5 )
+shape = SubResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="suelo2"]
+margin_top = 555.0
+margin_right = 984.0
+margin_bottom = 601.0
+color = Color( 0.631373, 0.694118, 0.694118, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 24, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 214, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 262, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 167, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 694, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 310, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 886, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 838, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 790, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 120, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 358, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite12" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 598, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite13" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 502, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite14" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 646, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite15" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 742, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite16" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 550, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite17" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 406, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite18" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 72, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite19" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 454, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite21" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 971, 577 )
+scale = Vector2( 0.203125, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="AnimatedSprite22" type="AnimatedSprite" parent="suelo2"]
+position = Vector2( 934, 577 )
+scale = Vector2( 0.375, 0.359375 )
+frames = SubResource( 7 )
+
+[node name="Peldaños" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="peldaño" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 1, 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño"]
+position = Vector2( -3.15085, -11.1891 )
+scale = Vector2( 1.01297, 1.02083 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño"]
+position = Vector2( 200, 526 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="peldaño2" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 65, -34 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño2"]
+position = Vector2( -3.15085, -11.1891 )
+scale = Vector2( 1.01297, 1.02083 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño2"]
+position = Vector2( 200, 526 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="peldaño3" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 319, -39 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño3"]
+position = Vector2( -3.15085, -11.1891 )
+scale = Vector2( 1.01297, 1.02083 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño3"]
+position = Vector2( 200, 526 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="peldaño4" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 412, -130 )
+scale = Vector2( 0.980745, 0.992005 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño4"]
+position = Vector2( 84.6823, 152.802 )
+scale = Vector2( 0.625247, 0.723377 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño4"]
+position = Vector2( 210.365, 532.809 )
+scale = Vector2( 0.25992, 0.27642 )
+frames = SubResource( 8 )
+
+[node name="peldaño5" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 196, -83 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño5"]
+position = Vector2( -3.15085, -11.1891 )
+scale = Vector2( 1.01297, 1.02083 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño5"]
+position = Vector2( 200, 526 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="peldaño6" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 119, -34 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño6"]
+position = Vector2( -3.15085, -11.1891 )
+scale = Vector2( 1.01297, 1.02083 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño6"]
+position = Vector2( 200, 526 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="peldaño7" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 700, -17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño7"]
+position = Vector2( -3.15085, -11.1891 )
+scale = Vector2( 1.01297, 1.02083 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño7"]
+position = Vector2( 200, 526 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="peldaño8" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 592, -17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño8"]
+position = Vector2( -3.15085, -11.1891 )
+scale = Vector2( 1.01297, 1.02083 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño8"]
+position = Vector2( 200, 526 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="peldaño9" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 646, -17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño9"]
+position = Vector2( -3.15085, -11.1891 )
+scale = Vector2( 1.01297, 1.02083 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño9"]
+position = Vector2( 200, 526 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="peldaño10" type="StaticBody2D" parent="Peldaños"]
+position = Vector2( 538, -17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño10"]
+position = Vector2( -3.15085, -11.1891 )
+scale = Vector2( 1.01297, 1.02083 )
+polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño10"]
+position = Vector2( 200, 526 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="Escaleras" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escaleras"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Escaleras"]
+position = Vector2( 1006, 526 )
+scale = Vector2( 0.238283, 0.394532 )
+frames = SubResource( 9 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Escaleras"]
+position = Vector2( 1006, 405 )
+scale = Vector2( 0.238283, 0.394532 )
+frames = SubResource( 9 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Escaleras"]
+position = Vector2( 1006, 324 )
+scale = Vector2( 0.238283, 0.394532 )
+frames = SubResource( 9 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Escaleras"]
+position = Vector2( 1006, 303 )
+scale = Vector2( 0.238283, 0.394532 )
+frames = SubResource( 9 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Escaleras"]
+position = Vector2( 1006, 364 )
+scale = Vector2( 0.238283, 0.394532 )
+frames = SubResource( 9 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Escaleras"]
+position = Vector2( 1006, 445 )
+scale = Vector2( 0.238283, 0.394532 )
+frames = SubResource( 9 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Escaleras"]
+position = Vector2( 1006, 485 )
+scale = Vector2( 0.238283, 0.394532 )
+frames = SubResource( 9 )
+
+[node name="peldaños-p2" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="peldaño" type="StaticBody2D" parent="peldaños-p2"]
+position = Vector2( -332, -142 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño"]
+polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+
+[node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño"]
+position = Vector2( 733.5, 219.5 )
+scale = Vector2( 0.398438, 0.164063 )
+texture = ExtResource( 12 )
+
+[node name="peldaño2" type="StaticBody2D" parent="peldaños-p2"]
+position = Vector2( -651, 44 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño2"]
+polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+
+[node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño2"]
+position = Vector2( 733.5, 219.5 )
+scale = Vector2( 0.398438, 0.164063 )
+texture = ExtResource( 12 )
+
+[node name="peldaño3" type="StaticBody2D" parent="peldaños-p2"]
+position = Vector2( -155, -94 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño3"]
+polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+
+[node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño3"]
+position = Vector2( 733.5, 219.5 )
+scale = Vector2( 0.398438, 0.164063 )
+texture = ExtResource( 12 )
+
+[node name="peldaño4" type="StaticBody2D" parent="peldaños-p2"]
+position = Vector2( -253, -9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño4"]
+polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+
+[node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño4"]
+position = Vector2( 733.5, 219.5 )
+scale = Vector2( 0.398438, 0.164063 )
+texture = ExtResource( 12 )
+
+[node name="peldaño5" type="StaticBody2D" parent="peldaños-p2"]
+position = Vector2( 5, 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño5"]
+polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+
+[node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño5"]
+position = Vector2( 733.5, 219.5 )
+scale = Vector2( 0.398438, 0.164063 )
+texture = ExtResource( 12 )
+
+[node name="peldaño6" type="StaticBody2D" parent="peldaños-p2"]
+position = Vector2( 194, 45 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño6"]
+polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+
+[node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño6"]
+position = Vector2( 733.5, 219.5 )
+scale = Vector2( 0.398438, 0.164063 )
+texture = ExtResource( 12 )
+
+[node name="peldaño7" type="StaticBody2D" parent="peldaños-p2"]
+position = Vector2( 92, -84 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño7"]
+polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+
+[node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño7"]
+position = Vector2( 733.5, 219.5 )
+scale = Vector2( 0.398438, 0.164063 )
+texture = ExtResource( 12 )
+
+[node name="peldaño8" type="StaticBody2D" parent="peldaños-p2"]
+position = Vector2( -455, -48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño8"]
+polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+
+[node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño8"]
+position = Vector2( 733.5, 219.5 )
+scale = Vector2( 0.398438, 0.164063 )
+texture = ExtResource( 12 )
+
+[node name="peldaño9" type="StaticBody2D" parent="peldaños-p2"]
+position = Vector2( -151, 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño9"]
+polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+
+[node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño9"]
+position = Vector2( 733.5, 219.5 )
+scale = Vector2( 0.398438, 0.164063 )
+texture = ExtResource( 12 )
+
+[node name="problemas-p2" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="pinchos1" type="StaticBody2D" parent="problemas-p2"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="problemas-p2/pinchos1"]
+polygon = PoolVector2Array( 770, 274, 791, 240, 811, 274, 833, 240, 853, 274, 874, 239, 895, 274, 812, 275 )
+
+[node name="pincho" type="AnimatedSprite" parent="problemas-p2/pinchos1"]
+position = Vector2( 833, 239 )
+scale = Vector2( 0.976563, 0.5625 )
+frames = SubResource( 10 )
+
+[node name="pinchos2" type="StaticBody2D" parent="problemas-p2"]
+position = Vector2( -172, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="problemas-p2/pinchos2"]
+position = Vector2( 191.313, 9.13133 )
+scale = Vector2( 0.775, 0.96875 )
+polygon = PoolVector2Array( 770, 274, 773.79, 267.219, 791, 240, 811, 274, 833, 240, 853, 274, 874, 239, 895, 274, 812, 275 )
+
+[node name="pincho" type="AnimatedSprite" parent="problemas-p2/pinchos2"]
+position = Vector2( 837, 240 )
+scale = Vector2( 0.753907, 0.546875 )
+frames = SubResource( 10 )
+
+[node name="pinchos4" type="StaticBody2D" parent="problemas-p2"]
+position = Vector2( -506, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="problemas-p2/pinchos4"]
+position = Vector2( 191.313, 9.13133 )
+scale = Vector2( 0.775, 0.96875 )
+polygon = PoolVector2Array( 770, 274, 773.79, 267.219, 791, 240, 811, 274, 833, 240, 853, 274, 874, 239, 895, 274, 812, 275 )
+
+[node name="pincho" type="AnimatedSprite" parent="problemas-p2/pinchos4"]
+position = Vector2( 837, 240 )
+scale = Vector2( 0.753907, 0.546875 )
+frames = SubResource( 10 )
+
+[node name="pinchos6" type="StaticBody2D" parent="problemas-p2"]
+position = Vector2( -603, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="problemas-p2/pinchos6"]
+position = Vector2( 191.313, 9.13133 )
+scale = Vector2( 0.775, 0.96875 )
+polygon = PoolVector2Array( 770, 274, 773.79, 267.219, 791, 240, 811, 274, 833, 240, 853, 274, 874, 239, 895, 274, 812, 275 )
+
+[node name="pincho" type="AnimatedSprite" parent="problemas-p2/pinchos6"]
+position = Vector2( 837, 240 )
+scale = Vector2( 0.753907, 0.546875 )
+frames = SubResource( 10 )
+
+[node name="pinchos7" type="StaticBody2D" parent="problemas-p2"]
+position = Vector2( -667, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="problemas-p2/pinchos7"]
+position = Vector2( 191.313, 9.13133 )
+scale = Vector2( 0.775, 0.96875 )
+polygon = PoolVector2Array( 770, 274, 773.79, 267.219, 791, 240, 811, 274, 833, 240, 853, 274, 874, 239, 895, 274, 812, 275 )
+
+[node name="pincho" type="AnimatedSprite" parent="problemas-p2/pinchos7"]
+position = Vector2( 837, 240 )
+scale = Vector2( 0.753907, 0.546875 )
+frames = SubResource( 10 )
+
+[node name="pinchos5" type="StaticBody2D" parent="problemas-p2"]
+position = Vector2( -409, -1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="problemas-p2/pinchos5"]
+position = Vector2( 191.313, 9.13133 )
+scale = Vector2( 0.775, 0.96875 )
+polygon = PoolVector2Array( 770, 274, 773.79, 267.219, 791, 240, 811, 274, 833, 240, 853, 274, 874, 239, 895, 274, 812, 275 )
+
+[node name="pincho" type="AnimatedSprite" parent="problemas-p2/pinchos5"]
+position = Vector2( 837, 240 )
+scale = Vector2( 0.753907, 0.546875 )
+frames = SubResource( 10 )
+
+[node name="pinchos3" type="StaticBody2D" parent="problemas-p2"]
+position = Vector2( -330, -3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="problemas-p2/pinchos3"]
+position = Vector2( 526, 77.0001 )
+scale = Vector2( 0.4, 0.729166 )
+polygon = PoolVector2Array( 770, 274, 773.79, 267.219, 791, 240, 811, 274, 833, 240, 853, 274, 874, 239, 895, 274, 812, 275 )
+
+[node name="pincho" type="AnimatedSprite" parent="problemas-p2/pinchos3"]
+position = Vector2( 859, 251 )
+scale = Vector2( 0.398438, 0.414063 )
+frames = SubResource( 10 )
+
+[node name="puerta" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puerta"]
+position = Vector2( 28, 228.25 )
+shape = SubResource( 13 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="puerta"]
+position = Vector2( 28.5, 165 )
+scale = Vector2( 0.414063, 0.53125 )
+frames = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="puerta"]
+position = Vector2( 28.5, 236 )
+scale = Vector2( 0.414063, 0.609375 )
+frames = SubResource( 11 )
+
+[node name="llave" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="llave"]
+position = Vector2( 577, 101 )
+rotation = 0.53275
+scale = Vector2( 0.3125, 0.210938 )
+frames = SubResource( 14 )
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="llave"]
+polygon = PoolVector2Array( 567, 95, 570, 95, 573, 96, 575, 97, 576, 98, 579, 98, 585, 98, 587, 99, 588, 101, 588, 102, 588, 103, 589, 105, 589, 106, 588, 107, 587, 107, 586, 107, 585, 107, 584, 107, 583, 107, 583, 107, 581, 107, 580, 105, 579, 104, 579, 104, 579, 106, 578, 107, 576, 108, 573, 108, 571, 107, 569, 106, 567, 104, 565, 100, 565, 98, 566, 96 )

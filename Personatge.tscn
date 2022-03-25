@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Main Character/godot(5).png" type="Texture" id=1]
+[ext_resource path="res://Main Character/godot(6).png" type="Texture" id=2]
+[ext_resource path="res://Main Character/godot(4).png" type="Texture" id=3]
+[ext_resource path="res://Main Character/godot(3).png" type="Texture" id=4]
+[ext_resource path="res://Main Character/godot(1).png" type="Texture" id=5]
+[ext_resource path="res://Main Character/godot(2).png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="Personatge" type="Node2D"]
+
+[node name="personatge" type="KinematicBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="personatge"]
+position = Vector2( 0, 1.81899e-12 )
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( -10, -23, -2, -26, 4, -28, 10, -26, 11, -22, 8, -21, 6, -10, 2, -8, 5, -3, 9, -1, 10, 0, 10, 0, 10, 2, 5, 4, 3, 9, 4, 19, 3, 21, 8, 23, 9, 25, 6, 27, -1, 27, -2, 25, 0, 23, -2, 17, -8, 21, -8, 24, -8, 25, -11, 25, -15, 21, -15, 19, -9, 15, -7, 11, -7, 3, -11, 7, -9, 10, -11, 13, -13, 12, -15, 9, -14, 3, -11, -3, -9, -6, -7, -10, -6, -12, -8, -14, -10, -18, -10, -21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="personatge"]
+position = Vector2( 2.00002, -1.52588e-05 )
+scale = Vector2( 0.367188, 0.395745 )
+frames = SubResource( 1 )
+frame = 1
