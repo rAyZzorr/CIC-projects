@@ -140,7 +140,7 @@ modulate = Color( 1, 1, 1, 0.443137 )
 position = Vector2( 512.5, 256 )
 scale = Vector2( 2.06225, 1.78873 )
 frames = SubResource( 5 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="fake-fuego" type="AnimatedSprite" parent="fondo"]
@@ -150,7 +150,7 @@ position = Vector2( 728, 465 )
 rotation = 3.13883
 scale = Vector2( 1.32576, 4.92793 )
 frames = SubResource( 6 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="suelo" type="StaticBody2D" parent="."]
@@ -185,7 +185,7 @@ material = SubResource( 9 )
 position = Vector2( 729, 542 )
 scale = Vector2( 0.0824196, 1 )
 frames = SubResource( 7 )
-frame = 3
+frame = 8
 playing = true
 
 [node name="crat-top" type="Sprite" parent="crateres"]
@@ -224,7 +224,7 @@ __meta__ = {
 position = Vector2( 948, 522 )
 scale = Vector2( 0.760828, 0.855078 )
 frames = SubResource( 2 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="Sprite" type="Sprite" parent="nave"]
@@ -422,5 +422,5 @@ shape = SubResource( 4 )
 position = Vector2( 981, 449 )
 scale = Vector2( 0.263636, 0.270833 )
 frames = SubResource( 3 )
-frame = 7
+frame = 6
 playing = true
