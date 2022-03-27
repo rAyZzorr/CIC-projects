@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://PNG/Ground/Stone/stone.png" type="Texture" id=1]
 [ext_resource path="res://PNG/Ground/Stone/stoneHalf.png" type="Texture" id=2]
@@ -38,7 +38,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 335, 22.5 )
+extents = Vector2( 335, 17.25 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -52,7 +52,7 @@ animations = [ {
 extents = Vector2( 71.5, 23 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 363.875, 22.5 )
+extents = Vector2( 331.281, 22.5 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -70,6 +70,15 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 27, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 16.8239, 10.0807 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 108, 13.5 )
+
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 14.25, 127.5 )
 
@@ -83,6 +92,33 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 24.5, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 25.5, 10.5 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 25, 9.5 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 25, 10 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 25, 10 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 25.5, 10.25 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 25.5, 10.5 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 25.5, 10.5 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 25.5, 10.5 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 25, 10 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
@@ -125,6 +161,7 @@ extents = Vector2( 15, 10 )
 [node name="sc1" type="Node2D"]
 
 [node name="decorado" type="Node2D" parent="."]
+position = Vector2( 0, -1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -231,46 +268,45 @@ texture = ExtResource( 3 )
 position = Vector2( 39, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha2" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 931, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha3" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 781, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha4" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 627, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha5" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 480, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha6" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 178, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha7" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 304, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="ventanas" type="AnimatedSprite" parent="decorado"]
@@ -477,39 +513,39 @@ texture = ExtResource( 13 )
 position = Vector2( 77.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha2" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 969.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha4" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 665.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha5" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 518.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha6" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 216.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha7" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 342.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="ventana" type="Sprite" parent="decorado2"]
@@ -540,31 +576,35 @@ texture = ExtResource( 10 )
 [node name="Lava" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
-position = Vector2( 573, 577 )
+position = Vector2( 573, 582.25 )
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lava"]
 position = Vector2( 318.5, 572.25 )
 scale = Vector2( 1.28906, 0.292969 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Lava"]
 position = Vector2( 819.75, 572 )
 scale = Vector2( 1.42578, 0.292969 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Lava"]
 position = Vector2( 647, 572 )
 scale = Vector2( 1.28906, 0.292969 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Lava"]
 position = Vector2( 483, 572 )
 scale = Vector2( 1.28906, 0.292969 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="suelo" type="StaticBody2D" parent="."]
@@ -578,7 +618,7 @@ position = Vector2( 980.5, 578 )
 shape = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="suelo"]
-position = Vector2( 2.5, 577.5 )
+position = Vector2( -61.6875, 577.5 )
 shape = SubResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="suelo"]
@@ -647,7 +687,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="suelo2"]
-position = Vector2( 620.125, 577.5 )
+position = Vector2( 651.719, 577.5 )
 shape = SubResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="suelo2"]
@@ -770,15 +810,14 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño"]
-position = Vector2( -3.15085, -11.1891 )
-scale = Vector2( 1.01297, 1.02083 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño"]
 position = Vector2( 200, 525 )
 scale = Vector2( 0.421875, 0.382813 )
 frames = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peldaños/peldaño"]
+position = Vector2( 200, 514.5 )
+shape = SubResource( 18 )
 
 [node name="peldaño2" type="StaticBody2D" parent="Peldaños"]
 position = Vector2( 65, -34 )
@@ -786,15 +825,18 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño2"]
-position = Vector2( -3.15085, -11.1891 )
-scale = Vector2( 1.01297, 1.02083 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño2"]
 position = Vector2( 200, 525 )
 scale = Vector2( 0.421875, 0.382813 )
 frames = SubResource( 8 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Peldaños/peldaño2"]
+position = Vector2( 254, 525 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Peldaños/peldaño2"]
+polygon = PoolVector2Array( 174, 505, 175, 503, 178, 501, 184, 501, 210, 501, 276, 501, 279, 503, 281, 507, 281, 524, 276, 528, 252, 528, 220, 528, 178, 528, 175, 526, 173, 523, 173, 517, 173, 507 )
 
 [node name="peldaño3" type="StaticBody2D" parent="Peldaños"]
 position = Vector2( 319, -39 )
@@ -802,32 +844,28 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño3"]
-position = Vector2( -3.15085, -11.1891 )
-scale = Vector2( 1.01297, 1.02083 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño3"]
 position = Vector2( 200, 525 )
 scale = Vector2( 0.421875, 0.382813 )
 frames = SubResource( 8 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peldaños/peldaño3"]
+position = Vector2( 200, 514.5 )
+shape = SubResource( 18 )
+
 [node name="peldaño4" type="StaticBody2D" parent="Peldaños"]
 position = Vector2( 412, -130 )
 scale = Vector2( 0.980745, 0.992005 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño4"]
-position = Vector2( 84.6823, 152.802 )
-scale = Vector2( 0.625247, 0.723377 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño4"]
 position = Vector2( 209.345, 532.809 )
 scale = Vector2( 0.25992, 0.27642 )
 frames = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peldaños/peldaño4"]
+position = Vector2( 209.534, 525.199 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 19 )
 
 [node name="peldaño5" type="StaticBody2D" parent="Peldaños"]
 position = Vector2( 196, -83 )
@@ -835,95 +873,41 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño5"]
-position = Vector2( -3.15085, -11.1891 )
-scale = Vector2( 1.01297, 1.02083 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño5"]
 position = Vector2( 200, 525 )
 scale = Vector2( 0.421875, 0.382813 )
 frames = SubResource( 8 )
 
-[node name="peldaño6" type="StaticBody2D" parent="Peldaños"]
-position = Vector2( 119, -34 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño6"]
-position = Vector2( -3.15085, -11.1891 )
-scale = Vector2( 1.01297, 1.02083 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño6"]
-position = Vector2( 200, 525 )
-scale = Vector2( 0.421875, 0.382813 )
-frames = SubResource( 8 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peldaños/peldaño5"]
+position = Vector2( 200, 514.5 )
+shape = SubResource( 18 )
 
 [node name="peldaño7" type="StaticBody2D" parent="Peldaños"]
 position = Vector2( 700, -17 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño7"]
-position = Vector2( -3.15085, -11.1891 )
-scale = Vector2( 1.01297, 1.02083 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Peldaños/peldaño7"]
+position = Vector2( 92, 525 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Peldaños/peldaño7"]
+position = Vector2( 146, 525 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Peldaños/peldaño7"]
+position = Vector2( 38, 525 )
+scale = Vector2( 0.421875, 0.382813 )
+frames = SubResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño7"]
 position = Vector2( 200, 525 )
 scale = Vector2( 0.421875, 0.382813 )
 frames = SubResource( 8 )
 
-[node name="peldaño8" type="StaticBody2D" parent="Peldaños"]
-position = Vector2( 592, -17 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño8"]
-position = Vector2( -3.15085, -11.1891 )
-scale = Vector2( 1.01297, 1.02083 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño8"]
-position = Vector2( 200, 525 )
-scale = Vector2( 0.421875, 0.382813 )
-frames = SubResource( 8 )
-
-[node name="peldaño9" type="StaticBody2D" parent="Peldaños"]
-position = Vector2( 646, -17 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño9"]
-position = Vector2( -3.15085, -11.1891 )
-scale = Vector2( 1.01297, 1.02083 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño9"]
-position = Vector2( 200, 525 )
-scale = Vector2( 0.421875, 0.382813 )
-frames = SubResource( 8 )
-
-[node name="peldaño10" type="StaticBody2D" parent="Peldaños"]
-position = Vector2( 538, -17 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Peldaños/peldaño10"]
-position = Vector2( -3.15085, -11.1891 )
-scale = Vector2( 1.01297, 1.02083 )
-polygon = PoolVector2Array( 177, 502, 222, 502, 225, 503, 227, 505, 227, 525, 226, 527, 225, 528, 223, 529, 178, 529, 177, 529, 176, 528, 175, 527, 174, 525, 174, 506, 175, 504, 176, 503 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Peldaños/peldaño10"]
-position = Vector2( 200, 525 )
-scale = Vector2( 0.421875, 0.382813 )
-frames = SubResource( 8 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peldaños/peldaño7"]
+position = Vector2( 119, 514.5 )
+shape = SubResource( 20 )
 
 [node name="Escaleras" type="Area2D" parent="."]
 position = Vector2( 0, 2 )
@@ -978,9 +962,6 @@ shape = SubResource( 16 )
 
 [node name="peldaños-p2" type="Node2D" parent="."]
 position = Vector2( 0, -1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="peldaño" type="StaticBody2D" parent="peldaños-p2"]
 position = Vector2( -332, -142 )
@@ -988,8 +969,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño"]
-polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="peldaños-p2/peldaño"]
+position = Vector2( 733.5, 219.5 )
+shape = SubResource( 26 )
 
 [node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño"]
 position = Vector2( 733.5, 219.5 )
@@ -997,13 +979,14 @@ scale = Vector2( 0.398438, 0.164063 )
 texture = ExtResource( 12 )
 
 [node name="peldaño2" type="StaticBody2D" parent="peldaños-p2"]
-position = Vector2( -651, 44 )
+position = Vector2( -651, 46 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño2"]
-polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="peldaños-p2/peldaño2"]
+position = Vector2( 734, 219.5 )
+shape = SubResource( 28 )
 
 [node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño2"]
 position = Vector2( 733.5, 219.5 )
@@ -1016,11 +999,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño3"]
-polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="peldaños-p2/peldaño3"]
+position = Vector2( 727, 209 )
+shape = SubResource( 27 )
 
 [node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño3"]
-position = Vector2( 733.5, 219.5 )
+position = Vector2( 727, 209 )
 scale = Vector2( 0.398438, 0.164063 )
 texture = ExtResource( 12 )
 
@@ -1030,8 +1014,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño4"]
-polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="peldaños-p2/peldaño4"]
+position = Vector2( 734, 220 )
+shape = SubResource( 21 )
 
 [node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño4"]
 position = Vector2( 733.5, 219.5 )
@@ -1044,8 +1029,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño5"]
-polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="peldaños-p2/peldaño5"]
+position = Vector2( 733.5, 219.75 )
+shape = SubResource( 22 )
 
 [node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño5"]
 position = Vector2( 733.5, 219.5 )
@@ -1053,18 +1039,19 @@ scale = Vector2( 0.398438, 0.164063 )
 texture = ExtResource( 12 )
 
 [node name="peldaño6" type="StaticBody2D" parent="peldaños-p2"]
-position = Vector2( 194, 45 )
+position = Vector2( 202, 45 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño6"]
-polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
 
 [node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño6"]
 position = Vector2( 733.5, 219.5 )
 scale = Vector2( 0.398438, 0.164063 )
 texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="peldaños-p2/peldaño6"]
+position = Vector2( 733.5, 219.5 )
+shape = SubResource( 23 )
 
 [node name="peldaño7" type="StaticBody2D" parent="peldaños-p2"]
 position = Vector2( 92, -84 )
@@ -1072,8 +1059,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño7"]
-polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="peldaños-p2/peldaño7"]
+position = Vector2( 733.5, 219.5 )
+shape = SubResource( 24 )
 
 [node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño7"]
 position = Vector2( 733.5, 219.5 )
@@ -1086,8 +1074,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño8"]
-polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="peldaños-p2/peldaño8"]
+position = Vector2( 733.5, 219.5 )
+shape = SubResource( 29 )
 
 [node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño8"]
 position = Vector2( 733.5, 219.5 )
@@ -1100,15 +1089,17 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="peldaños-p2/peldaño9"]
-polygon = PoolVector2Array( 708, 211, 709, 210, 712, 209, 754, 209, 755, 209, 756, 209, 758, 210, 759, 211, 759, 228, 758, 229, 756, 230, 712, 230, 709, 229, 708, 228 )
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="peldaños-p2/peldaño9"]
+position = Vector2( 742, 214 )
+shape = SubResource( 25 )
 
 [node name="Sprite2" type="Sprite" parent="peldaños-p2/peldaño9"]
-position = Vector2( 733.5, 219.5 )
+position = Vector2( 742, 214 )
 scale = Vector2( 0.398438, 0.164063 )
 texture = ExtResource( 12 )
 
 [node name="problemas-p2" type="Area2D" parent="."]
+position = Vector2( 2, 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1211,7 +1202,7 @@ position = Vector2( 577, 101 )
 rotation = 0.53275
 scale = Vector2( 0.3125, 0.210938 )
 frames = SubResource( 14 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="llave"]
@@ -1219,9 +1210,11 @@ position = Vector2( 578, 103 )
 shape = SubResource( 17 )
 
 [node name="personatge" parent="." instance=ExtResource( 5 )]
-position = Vector2( 18, 524 )
+position = Vector2( 15, 399 )
+collision/safe_margin = 0.001
 
 [node name="Camera2D" type="Camera2D" parent="personatge"]
+position = Vector2( 4, 0 )
 current = true
 zoom = Vector2( 0.622, 0.682 )
 
