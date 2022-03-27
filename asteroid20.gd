@@ -9,7 +9,7 @@ var estado = false
 
 func _ready():
 	anima("ready")
-	position = Vector2(1000, 100)
+	position = Vector2(700, 100)
 func _physics_process(delta):
 	if is_on_floor():
 		for index in get_slide_count():
@@ -17,7 +17,7 @@ func _physics_process(delta):
 			if collision:
 				if collision.collider.name.begins_with("personatge"):
 					anima("destroy")
-					position = Vector2(1000, 560)
+					position = Vector2(700, 560)
 					get_node("CollisionPolygon2D").set_deferred("disabled", true)
 					estado = true
 				elif collision.collider.name.begins_with("asteroid"):

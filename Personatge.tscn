@@ -43,3 +43,6 @@ polygon = PoolVector2Array( -5, 14, -5, 26, -5, 28, -3, 28, -1, 28, -1, 28, 0, 2
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 20, -7 )
+
+[node name="pos2" type="Position2D" parent="."]
+position = Vector2( -20, -7 )

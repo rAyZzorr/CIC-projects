@@ -168,7 +168,7 @@ modulate = Color( 1, 1, 1, 0.443137 )
 position = Vector2( 512.5, 256 )
 scale = Vector2( 2.06225, 1.78873 )
 frames = SubResource( 5 )
-frame = 4
+frame = 8
 playing = true
 
 [node name="fake-fuego" type="AnimatedSprite" parent="fondo"]
@@ -199,6 +199,7 @@ texture = ExtResource( 2 )
 polygon = PoolVector2Array( 691, 508, 702, 488, 717, 477, 719, 489, 743, 490, 748, 479, 758, 490, 763, 506, 767, 508 )
 
 [node name="crateres" type="Node2D" parent="."]
+position = Vector2( -1, 0 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -216,7 +217,7 @@ material = SubResource( 9 )
 position = Vector2( 729, 542 )
 scale = Vector2( 0.0824196, 1 )
 frames = SubResource( 7 )
-frame = 7
+frame = 6
 playing = true
 
 [node name="crat-top" type="Sprite" parent="crateres"]
@@ -255,7 +256,7 @@ __meta__ = {
 position = Vector2( 948, 522 )
 scale = Vector2( 0.760828, 0.855078 )
 frames = SubResource( 2 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="Sprite" type="Sprite" parent="nave"]
@@ -453,7 +454,7 @@ shape = SubResource( 4 )
 position = Vector2( 981, 449 )
 scale = Vector2( 0.263636, 0.270833 )
 frames = SubResource( 3 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="alien1" type="Area2D" parent="."]

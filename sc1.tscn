@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://PNG/Ground/Stone/stone.png" type="Texture" id=1]
 [ext_resource path="res://PNG/Ground/Stone/stoneHalf.png" type="Texture" id=2]
@@ -52,7 +52,7 @@ animations = [ {
 extents = Vector2( 71.5, 23 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 331.281, 22.5 )
+extents = Vector2( 425.344, 22.5 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -61,6 +61,9 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 602, 22.5 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -268,46 +271,45 @@ texture = ExtResource( 3 )
 position = Vector2( 39, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha2" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 931, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha3" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 781, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha4" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 627, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha5" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 480, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha6" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 178, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha7" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 304, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="ventanas" type="AnimatedSprite" parent="decorado"]
@@ -514,39 +516,39 @@ texture = ExtResource( 13 )
 position = Vector2( 77.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha2" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 969.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha4" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 665.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha5" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 518.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha6" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 216.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha7" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 342.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="ventana" type="Sprite" parent="decorado2"]
@@ -619,7 +621,7 @@ position = Vector2( 980.5, 578 )
 shape = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="suelo"]
-position = Vector2( -61.6875, 577.5 )
+position = Vector2( -185.344, 577.5 )
 shape = SubResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="suelo"]
@@ -683,13 +685,6 @@ frames = SubResource( 7 )
 
 [node name="suelo2" type="StaticBody2D" parent="."]
 position = Vector2( -1, -280 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo2"]
-position = Vector2( 651.719, 577.5 )
-shape = SubResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="suelo2"]
 margin_top = 555.0
@@ -801,6 +796,10 @@ frames = SubResource( 7 )
 position = Vector2( 934, 577 )
 scale = Vector2( 0.375, 0.359375 )
 frames = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo2"]
+position = Vector2( 383, 578.5 )
+shape = SubResource( 30 )
 
 [node name="Peldaños" type="Node2D" parent="."]
 position = Vector2( 7, 7 )
@@ -1202,7 +1201,6 @@ position = Vector2( 577, 101 )
 rotation = 0.53275
 scale = Vector2( 0.3125, 0.210938 )
 frames = SubResource( 14 )
-frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="llave"]

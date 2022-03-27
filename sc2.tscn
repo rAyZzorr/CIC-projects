@@ -62,7 +62,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 669.5, 28 )
+extents = Vector2( 1054.5, 28 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 30.5, 67 )
@@ -74,19 +74,19 @@ animations = [ {
 "name": "default",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "destroy",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "destruccion_total",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "destroy",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 5, 77 )
+extents = Vector2( 6, 226.5 )
 
 [node name="sc2" type="Node2D"]
 
@@ -100,7 +100,6 @@ __meta__ = {
 position = Vector2( 488, -313.733 )
 scale = Vector2( 1, 1.00556 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 offset = Vector2( 471, 312 )
 
@@ -117,7 +116,7 @@ frames = SubResource( 6 )
 [node name="suelo" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="suelo"]
-position = Vector2( 357.5, 568 )
+position = Vector2( 742.5, 568 )
 shape = SubResource( 1 )
 
 [node name="suelo3" type="Sprite" parent="suelo"]
@@ -526,7 +525,7 @@ animation = "destruccion_total"
 [node name="portal_1" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal_1"]
-position = Vector2( 1019, 460 )
+position = Vector2( 1018, 310.5 )
 shape = SubResource( 4 )
 
 [node name="personatge" parent="." instance=ExtResource( 15 )]

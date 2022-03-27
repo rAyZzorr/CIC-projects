@@ -1,7 +1,10 @@
 extends KinematicBody2D
 
 onready var bala = preload("res://bala.tscn")
+onready var balae = preload("res://balae.tscn")
 var b
+var be
+
 
 var llave = false
 var velocitat_base = 200
@@ -10,7 +13,7 @@ var multiplicador = 500
 var multiplier_salt = 600
 var gravetat = Vector2.DOWN * multiplicador
 var salt = Vector2.UP * multiplier_salt
-
+var lado = "right"
 
 func _ready():
 	position = Vector2(40, 520)
@@ -18,9 +21,14 @@ func _physics_process(delta):
 	velocitat.x = 0
 	if Input.is_action_just_pressed("dispara"):
 		if get_tree().current_scene.name == "sc4":
-			b = bala.instance()
-			get_parent().add_child(b)
-			b.global_position = $Position2D.global_position
+			if lado == "right":
+				b = bala.instance()
+				get_parent().add_child(b)
+				b.global_position = $Position2D.global_position
+			elif lado == "left":
+				be = balae.instance()
+				get_parent().add_child(be)
+				be.global_position = $pos2.global_position
 		else:
 			pass
 	if Input.is_action_pressed("mou_dreta"):
@@ -49,9 +57,11 @@ func _physics_process(delta):
 func anima(velocitat: Vector2):
 	var animacio = $AnimatedSprite
 	if velocitat.x > 0:
+		lado = "right"
 		animacio.flip_h = false
 		animacio.play("camina")
 	elif velocitat.x < 0:
+		lado = "left"
 		animacio.flip_h = true
 		animacio.play('camina')
 
@@ -101,28 +111,24 @@ func _on_alien1_body_entered(body):
 		position = Vector2(40, 520)
 	else:
 		pass
-
 func _on_alien2_body_entered(body):
 	if body.name == "personatge":
 		get_tree().change_scene("res://sc1.tscn")
 		position = Vector2(40, 520)
 	else:
 		pass
-
 func _on_alien3_body_entered(body):
 	if body.name == "personatge":
 		get_tree().change_scene("res://sc1.tscn")
 		position = Vector2(40, 520)
 	else:
 		pass
-
 func _on_alien4_body_entered(body):
 	if body.name == "personatge":
 		get_tree().change_scene("res://sc1.tscn")
 		position = Vector2(40, 520)
 	else:
 		pass
-
 func _on_alien5_body_entered(body):
 	if body.name == "personatge":
 		get_tree().change_scene("res://sc1.tscn")
