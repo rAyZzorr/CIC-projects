@@ -268,45 +268,46 @@ texture = ExtResource( 3 )
 position = Vector2( 39, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha2" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 931, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha3" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 781, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha4" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 627, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha5" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 480, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha6" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 178, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha7" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 304, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="ventanas" type="AnimatedSprite" parent="decorado"]
@@ -513,39 +514,39 @@ texture = ExtResource( 13 )
 position = Vector2( 77.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha2" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 969.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha4" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 665.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha5" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 518.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha6" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 216.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha7" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 342.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="ventana" type="Sprite" parent="decorado2"]
@@ -864,7 +865,6 @@ frames = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Peldaños/peldaño4"]
 position = Vector2( 209.534, 525.199 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 19 )
 
 [node name="peldaño5" type="StaticBody2D" parent="Peldaños"]
@@ -1202,7 +1202,7 @@ position = Vector2( 577, 101 )
 rotation = 0.53275
 scale = Vector2( 0.3125, 0.210938 )
 frames = SubResource( 14 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="llave"]
@@ -1220,10 +1220,8 @@ zoom = Vector2( 0.622, 0.682 )
 
 [connection signal="body_entered" from="Lava" to="personatge" method="_on_Lava_body_entered"]
 [connection signal="body_entered" from="Escaleras" to="personatge" method="_on_Escaleras_body_entered"]
-[connection signal="body_exited" from="Escaleras" to="personatge" method="_on_Escaleras_body_exited"]
 [connection signal="body_entered" from="conexion" to="personatge" method="_on_conexion_body_entered"]
 [connection signal="body_entered" from="problemas-p2" to="personatge" method="_on_problemasp2_body_entered"]
 [connection signal="body_entered" from="puerta" to="personatge" method="_on_puerta_body_entered"]
-[connection signal="body_entered" from="llave" to="personatge" method="_on_llave_body_entered"]
 [connection signal="body_exited" from="llave" to="personatge" method="_on_llave_body_exited"]
 [connection signal="hide" from="llave/clau" to="personatge" method="_on_AnimatedSprite_hide"]

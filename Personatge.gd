@@ -1,16 +1,28 @@
 extends KinematicBody2D
 
+onready var bala = preload("res://bala.tscn")
+var b
+
 var llave = false
 var velocitat_base = 200
 var velocitat = Vector2.ZERO
-var gravetat = Vector2.DOWN * 980
-var salt = Vector2.UP * 400
+var multiplicador = 500
+var multiplier_salt = 600
+var gravetat = Vector2.DOWN * multiplicador
+var salt = Vector2.UP * multiplier_salt
 
 
 func _ready():
 	position = Vector2(40, 520)
 func _physics_process(delta):
 	velocitat.x = 0
+	if Input.is_action_just_pressed("dispara"):
+		if get_tree().current_scene.name == "sc4":
+			b = bala.instance()
+			get_parent().add_child(b)
+			b.global_position = $Position2D.global_position
+		else:
+			pass
 	if Input.is_action_pressed("mou_dreta"):
 		velocitat += Vector2.RIGHT * velocitat_base
 	if Input.is_action_pressed("mou_esquerra"):
@@ -25,12 +37,15 @@ func _physics_process(delta):
 		if collision.collider.name.begins_with("asteroid"):
 			var ruta = "/root/sc2/asteroides/%s"
 			var node = ruta % collision.collider.name
-
 			if get_node(node).get("estado") == true:
 #			if get_node("/root/sc2/asteroides/asteroid1").get("estado") == true:
+				get_tree().change_scene("res://sc1.tscn")
 				position = Vector2(40, 520)
 			else:
 				pass
+#		if collision.collider.name.begins_with("alien"):
+#			get_tree().change_scene("res://sc1.tscn")
+#			position = Vector2(40, 520)
 func anima(velocitat: Vector2):
 	var animacio = $AnimatedSprite
 	if velocitat.x > 0:
@@ -68,5 +83,79 @@ func _on_puerta_body_entered(_body):
 	else:
 		position = Vector2(950, 225)
 
-#func _on_portal_1_body_entered(_body):
-#	get_tree().change_scene("res://sc3.tscn")
+
+func _on_portal_1_body_entered(body):
+	if body.name.begins_with("asteroid"):
+		pass
+	else:
+		print("inside")
+		get_tree().change_scene("res://sc3.tscn")
+
+func _on_nave_body_entered(_body):
+	get_tree().change_scene("res://sc4.tscn")
+	
+
+func _on_alien1_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass
+
+func _on_alien2_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass
+
+func _on_alien3_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass
+
+func _on_alien4_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass
+
+func _on_alien5_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass
+func _on_alien6_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass
+func _on_alien7_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass
+func _on_alien8_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass
+func _on_alien9_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass
+func _on_alien10_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://sc1.tscn")
+		position = Vector2(40, 520)
+	else:
+		pass

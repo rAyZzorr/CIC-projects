@@ -14,19 +14,24 @@ func _physics_process(delta):
 	if is_on_floor():
 		for index in get_slide_count():
 			var collision = get_slide_collision(index)
-			if collision.collider.name.begins_with("personatge"):
-				anima("destroy")
-				position = Vector2(830, 560)
-				get_node("CollisionPolygon2D").set_deferred("disabled", true)
-				estado = true
-			elif collision.collider.name.begins_with("asteroid"):
-				velocitat += gravetat * delta
-				velocitat = move_and_slide(velocitat, Vector2.UP)
-				anima("ready")
+			if collision:
+				if collision.collider.name.begins_with("personatge"):
+					anima("destroy")
+					position = Vector2(830, 560)
+					get_node("CollisionPolygon2D").set_deferred("disabled", true)
+					estado = true
+				elif collision.collider.name.begins_with("asteroid"):
+					velocitat += gravetat * delta
+					velocitat = move_and_slide(velocitat, Vector2.UP)
+					anima("ready")
+				elif collision.collider.name.begins_with("suelo"):
+					anima("destroy")
+					estado = false
+					get_node("CollisionPolygon2D").set_deferred("disabled", true)
+				else:
+					pass
 			else:
-				anima("destroy")
-				estado = false
-				get_node("CollisionPolygon2D").set_deferred("disabled", true)
+				pass
 	else:
 		velocitat += gravetat * delta
 		velocitat = move_and_slide(velocitat, Vector2.UP)

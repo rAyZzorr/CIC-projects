@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://space.jpg" type="Texture" id=1]
 [ext_resource path="res://PNG/Ground/Planet/planetMid.png" type="Texture" id=2]
@@ -57,6 +57,21 @@
 [ext_resource path="res://PNG/humo/PNG/Flash/flash08.png" type="Texture" id=55]
 [ext_resource path="res://PNG/humo/PNG/Flash/flash07.png" type="Texture" id=56]
 [ext_resource path="res://top-crater.png" type="Texture" id=57]
+[ext_resource path="res://Personatge.tscn" type="PackedScene" id=58]
+[ext_resource path="res://sc4.gd" type="Script" id=59]
+[ext_resource path="res://alien9.gd" type="Script" id=60]
+[ext_resource path="res://PNG/Enemies/slimeGreen.png" type="Texture" id=61]
+[ext_resource path="res://PNG/Enemies/slimeGreen_hit.png" type="Texture" id=62]
+[ext_resource path="res://PNG/Enemies/slimeGreen_move.png" type="Texture" id=63]
+[ext_resource path="res://alien1.gd" type="Script" id=64]
+[ext_resource path="res://alien5.gd" type="Script" id=65]
+[ext_resource path="res://alien4.gd" type="Script" id=66]
+[ext_resource path="res://alien7.gd" type="Script" id=67]
+[ext_resource path="res://alien2.gd" type="Script" id=68]
+[ext_resource path="res://alien8.gd" type="Script" id=69]
+[ext_resource path="res://alien6.gd" type="Script" id=70]
+[ext_resource path="res://alien10.gd" type="Script" id=71]
+[ext_resource path="res://alien3.gd" type="Script" id=72]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -120,7 +135,20 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 61 ), ExtResource( 63 ), ExtResource( 62 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 13.105
+height = 23.9669
+
 [node name="sc4" type="Node2D"]
+script = ExtResource( 59 )
 
 [node name="fondo" type="Node2D" parent="."]
 __meta__ = {
@@ -140,7 +168,7 @@ modulate = Color( 1, 1, 1, 0.443137 )
 position = Vector2( 512.5, 256 )
 scale = Vector2( 2.06225, 1.78873 )
 frames = SubResource( 5 )
-frame = 11
+frame = 4
 playing = true
 
 [node name="fake-fuego" type="AnimatedSprite" parent="fondo"]
@@ -167,6 +195,9 @@ position = Vector2( 510.5, 555.5 )
 scale = Vector2( 8.03906, 0.710938 )
 texture = ExtResource( 2 )
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="suelo"]
+polygon = PoolVector2Array( 691, 508, 702, 488, 717, 477, 719, 489, 743, 490, 748, 479, 758, 490, 763, 506, 767, 508 )
+
 [node name="crateres" type="Node2D" parent="."]
 __meta__ = {
 "_edit_group_": true
@@ -185,7 +216,7 @@ material = SubResource( 9 )
 position = Vector2( 729, 542 )
 scale = Vector2( 0.0824196, 1 )
 frames = SubResource( 7 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="crat-top" type="Sprite" parent="crateres"]
@@ -224,7 +255,7 @@ __meta__ = {
 position = Vector2( 948, 522 )
 scale = Vector2( 0.760828, 0.855078 )
 frames = SubResource( 2 )
-frame = 6
+frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="nave"]
@@ -422,5 +453,198 @@ shape = SubResource( 4 )
 position = Vector2( 981, 449 )
 scale = Vector2( 0.263636, 0.270833 )
 frames = SubResource( 3 )
-frame = 7
+frame = 1
 playing = true
+
+[node name="alien1" type="Area2D" parent="."]
+position = Vector2( -62, -26 )
+script = ExtResource( 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien1"]
+position = Vector2( 613, 473 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien1"]
+position = Vector2( 613, 497 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="alien2" type="Area2D" parent="."]
+position = Vector2( -115, -434 )
+script = ExtResource( 68 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien2"]
+position = Vector2( 613, 473 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien2"]
+position = Vector2( 613, 497 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="alien3" type="Area2D" parent="."]
+position = Vector2( 68, -252 )
+script = ExtResource( 72 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien3"]
+position = Vector2( 613, 473 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien3"]
+position = Vector2( 613, 497 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="alien4" type="Area2D" parent="."]
+position = Vector2( 336, -202 )
+script = ExtResource( 66 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien4"]
+position = Vector2( 613, 473 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien4"]
+position = Vector2( 613, 497 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="alien5" type="Area2D" parent="."]
+position = Vector2( 212, -416 )
+script = ExtResource( 65 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien5"]
+position = Vector2( 613, 473 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien5"]
+position = Vector2( 613, 497 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="alien6" type="Area2D" parent="."]
+position = Vector2( 369, -415 )
+script = ExtResource( 70 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien6"]
+position = Vector2( 613, 473 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien6"]
+position = Vector2( 613, 497 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="alien7" type="Area2D" parent="."]
+position = Vector2( 291, -416 )
+script = ExtResource( 67 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien7"]
+position = Vector2( 613, 473 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien7"]
+position = Vector2( 613, 497 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="alien8" type="Area2D" parent="."]
+position = Vector2( -323, -317 )
+script = ExtResource( 69 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien8"]
+position = Vector2( 613, 473 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien8"]
+position = Vector2( 613, 497 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="alien9" type="Area2D" parent="."]
+position = Vector2( -569, -354 )
+script = ExtResource( 60 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien9"]
+position = Vector2( 613, 473 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien9"]
+position = Vector2( 613, 497 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="alien10" type="Area2D" parent="."]
+script = ExtResource( 71 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alien10"]
+position = Vector2( 868.5, 270 )
+scale = Vector2( 0.585938, 0.578125 )
+frames = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien10"]
+position = Vector2( 868.5, 294 )
+rotation = -1.57891
+shape = SubResource( 11 )
+
+[node name="personatge" parent="." instance=ExtResource( 58 )]
+position = Vector2( 153, 482 )
+
+[connection signal="area_entered" from="alien1" to="alien1" method="_on_alien1_area_entered"]
+[connection signal="body_entered" from="alien1" to="personatge" method="_on_alien1_body_entered"]
+[connection signal="area_entered" from="alien2" to="alien2" method="_on_alien2_area_entered"]
+[connection signal="body_entered" from="alien2" to="personatge" method="_on_alien2_body_entered"]
+[connection signal="area_entered" from="alien3" to="alien3" method="_on_alien3_area_entered"]
+[connection signal="body_entered" from="alien3" to="personatge" method="_on_alien3_body_entered"]
+[connection signal="area_entered" from="alien4" to="alien4" method="_on_alien4_area_entered"]
+[connection signal="body_entered" from="alien4" to="personatge" method="_on_alien4_body_entered"]
+[connection signal="area_entered" from="alien5" to="alien5" method="_on_alien5_area_entered"]
+[connection signal="body_entered" from="alien5" to="personatge" method="_on_alien5_body_entered"]
+[connection signal="area_entered" from="alien6" to="alien6" method="_on_alien6_area_entered"]
+[connection signal="body_entered" from="alien6" to="personatge" method="_on_alien6_body_entered"]
+[connection signal="area_entered" from="alien7" to="alien7" method="_on_alien7_area_entered"]
+[connection signal="body_entered" from="alien7" to="personatge" method="_on_alien7_body_entered"]
+[connection signal="area_entered" from="alien8" to="alien8" method="_on_alien8_area_entered"]
+[connection signal="body_entered" from="alien8" to="personatge" method="_on_alien8_body_entered"]
+[connection signal="area_entered" from="alien9" to="alien9" method="_on_alien9_area_entered"]
+[connection signal="body_entered" from="alien9" to="personatge" method="_on_alien9_body_entered"]
+[connection signal="area_entered" from="alien10" to="alien10" method="_on_alien10_area_entered"]
+[connection signal="body_entered" from="alien10" to="personatge" method="_on_alien10_body_entered"]
