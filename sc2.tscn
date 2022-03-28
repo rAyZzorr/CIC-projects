@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://PNG/Ground/Grass/grassMid.png" type="Texture" id=1]
 [ext_resource path="res://PNG/Sprites X2/Meteors/spaceMeteors_002.png" type="Texture" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://asteroid19.gd" type="Script" id=35]
 [ext_resource path="res://asteroid20.gd" type="Script" id=36]
 [ext_resource path="res://sc2.gd" type="Script" id=37]
+[ext_resource path="res://new_aster.gd" type="Script" id=38]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -102,7 +103,6 @@ __meta__ = {
 position = Vector2( 488, -313.733 )
 scale = Vector2( 1, 1.00556 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 offset = Vector2( 471, 312 )
 
@@ -118,7 +118,7 @@ frames = SubResource( 6 )
 
 [node name="suelo" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo"]
+[node name="suelo" type="CollisionShape2D" parent="suelo"]
 position = Vector2( 742.5, 568 )
 shape = SubResource( 1 )
 
@@ -534,4 +534,23 @@ shape = SubResource( 4 )
 [node name="personatge" parent="." instance=ExtResource( 15 )]
 position = Vector2( 81, 513 )
 
+[node name="new_aster" type="Area2D" parent="."]
+position = Vector2( 152, 303 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="new_aster"]
+polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="new_aster"]
+position = Vector2( 166, -41 )
+scale = Vector2( 0.141686, 0.136564 )
+frames = SubResource( 2 )
+animation = "destruccion_total"
+playing = true
+
 [connection signal="body_entered" from="portal_1" to="personatge" method="_on_portal_1_body_entered"]
+[connection signal="area_entered" from="new_aster" to="new_aster" method="_on_new_aster_area_entered"]
+[connection signal="body_entered" from="new_aster" to="new_aster" method="_on_new_aster_body_entered"]

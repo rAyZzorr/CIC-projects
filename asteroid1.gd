@@ -12,7 +12,7 @@ func _ready():
 	position = Vector2(300, 100)
 func _physics_process(delta):
 	if is_on_floor():
-		for index in get_slide_count():
+		for index in range(get_slide_count()):
 			var collision = get_slide_collision(index)
 			if collision:
 				if collision.collider.name.begins_with("personatge"):
