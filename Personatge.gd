@@ -9,11 +9,10 @@ var be
 var llave = false
 var velocitat_base = 200
 var velocitat = Vector2.ZERO
-var multiplicador = 500
-var multiplier_salt = 600
-var gravetat = Vector2.DOWN * multiplicador
-var salt = Vector2.UP * multiplier_salt
+var gravetat = Vector2.DOWN * 980
+var salt = Vector2.UP * 450
 var lado = "right"
+var contador_balas = 0
 
 func _ready():
 	position = Vector2(40, 520)
@@ -21,14 +20,16 @@ func _physics_process(delta):
 	velocitat.x = 0
 	if Input.is_action_just_pressed("dispara"):
 		if get_tree().current_scene.name == "sc4":
-			if lado == "right":
-				b = bala.instance()
-				get_parent().add_child(b)
-				b.global_position = $Position2D.global_position
-			elif lado == "left":
-				be = balae.instance()
-				get_parent().add_child(be)
-				be.global_position = $pos2.global_position
+			if contador_balas <= 20:
+				if lado == "right":
+					b = bala.instance()
+					get_parent().add_child(b)
+					b.global_position = $Position2D.global_position
+				elif lado == "left":
+					be = balae.instance()
+					get_parent().add_child(be)
+					be.global_position = $pos2.global_position
+				contador_balas +=1
 		else:
 			pass
 	if Input.is_action_pressed("mou_dreta"):
@@ -105,63 +106,12 @@ func _on_nave_body_entered(_body):
 	get_tree().change_scene("res://sc4.tscn")
 	
 
-func _on_alien1_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
-func _on_alien2_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
-func _on_alien3_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
-func _on_alien4_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
-func _on_alien5_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
-func _on_alien6_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
-func _on_alien7_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
-func _on_alien8_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
-func _on_alien9_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
-func _on_alien10_body_entered(body):
-	if body.name == "personatge":
-		get_tree().change_scene("res://sc1.tscn")
-		position = Vector2(40, 520)
-	else:
-		pass
+
+func reset():
+	get_tree().change_scene("res://sc1.tscn")
+	position = Vector2(40, 520)
+
+
+#
+#func _on_Foc_body_entered(_body):
+#	salt += Vector2.UP*900

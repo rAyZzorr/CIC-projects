@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://PNG/Ground/Grass/grassMid.png" type="Texture" id=1]
 [ext_resource path="res://PNG/Sprites X2/Meteors/spaceMeteors_002.png" type="Texture" id=2]
@@ -36,6 +36,7 @@
 [ext_resource path="res://asteroid18.gd" type="Script" id=34]
 [ext_resource path="res://asteroid19.gd" type="Script" id=35]
 [ext_resource path="res://asteroid20.gd" type="Script" id=36]
+[ext_resource path="res://sc2.gd" type="Script" id=37]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -89,6 +90,7 @@ animations = [ {
 extents = Vector2( 6, 226.5 )
 
 [node name="sc2" type="Node2D"]
+script = ExtResource( 37 )
 
 [node name="fondo" type="Node2D" parent="."]
 position = Vector2( 0, 10 )
@@ -100,6 +102,7 @@ __meta__ = {
 position = Vector2( 488, -313.733 )
 scale = Vector2( 1, 1.00556 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 offset = Vector2( 471, 312 )
 
