@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="WELCOME" type="Node2D"]
+
+[node name="decorado" type="Node2D" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 447.0
+margin_top = 317.0
+margin_right = 595.0
+margin_bottom = 459.0

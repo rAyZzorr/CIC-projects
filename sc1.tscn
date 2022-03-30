@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://PNG/Ground/Stone/stone.png" type="Texture" id=1]
 [ext_resource path="res://PNG/Ground/Stone/stoneHalf.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://PNG/Tiles/spikes.png" type="Texture" id=18]
 [ext_resource path="res://PNG/HUD/hudKey_yellow.png" type="Texture" id=19]
 [ext_resource path="res://PNG/HUD/hudKey_yellow_empty.png" type="Texture" id=20]
+[ext_resource path="res://llave.gd" type="Script" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -94,7 +95,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 24.5, 3.5 )
+extents = Vector2( 34.5, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 25.5, 10.5 )
@@ -160,6 +161,12 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 15, 10 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 12, 449 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 536, 10 )
 
 [node name="sc1" type="Node2D"]
 
@@ -271,45 +278,46 @@ texture = ExtResource( 3 )
 position = Vector2( 39, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha2" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 931, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha3" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 781, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha4" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 627, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha5" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 480, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha6" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 178, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha7" type="AnimatedSprite" parent="decorado"]
 position = Vector2( 304, 441 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="ventanas" type="AnimatedSprite" parent="decorado"]
@@ -516,39 +524,39 @@ texture = ExtResource( 13 )
 position = Vector2( 77.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha2" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 969.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha4" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 665.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha5" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 518.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="antorcha6" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 216.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="antorcha7" type="AnimatedSprite" parent="decorado2"]
 position = Vector2( 342.5, 152.5 )
 scale = Vector2( 0.304688, 0.273438 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="ventana" type="Sprite" parent="decorado2"]
@@ -586,24 +594,28 @@ shape = SubResource( 3 )
 position = Vector2( 318.5, 572.25 )
 scale = Vector2( 1.28906, 0.292969 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Lava"]
 position = Vector2( 819.75, 572 )
 scale = Vector2( 1.42578, 0.292969 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Lava"]
 position = Vector2( 647, 572 )
 scale = Vector2( 1.28906, 0.292969 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Lava"]
 position = Vector2( 483, 572 )
 scale = Vector2( 1.28906, 0.292969 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="suelo" type="StaticBody2D" parent="."]
@@ -952,7 +964,7 @@ frames = SubResource( 9 )
 [node name="conexion" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="conexion"]
-position = Vector2( 1007.5, 278 )
+position = Vector2( 1017.5, 278 )
 shape = SubResource( 16 )
 
 [node name="peldaños-p2" type="Node2D" parent="."]
@@ -1188,6 +1200,7 @@ frames = SubResource( 11 )
 
 [node name="llave" type="Area2D" parent="."]
 position = Vector2( -176, -47 )
+script = ExtResource( 21 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1213,10 +1226,25 @@ position = Vector2( 4, 0 )
 current = true
 zoom = Vector2( 0.622, 0.682 )
 
+[node name="parets" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parets"]
+position = Vector2( -14, 146 )
+shape = SubResource( 31 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="parets"]
+position = Vector2( 1062, 148 )
+shape = SubResource( 31 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="parets"]
+position = Vector2( 526, -145 )
+shape = SubResource( 32 )
+
 [connection signal="body_entered" from="Lava" to="personatge" method="_on_Lava_body_entered"]
 [connection signal="body_entered" from="Escaleras" to="personatge" method="_on_Escaleras_body_entered"]
 [connection signal="body_entered" from="conexion" to="personatge" method="_on_conexion_body_entered"]
 [connection signal="body_entered" from="problemas-p2" to="personatge" method="_on_problemasp2_body_entered"]
 [connection signal="body_entered" from="puerta" to="personatge" method="_on_puerta_body_entered"]
+[connection signal="body_entered" from="llave" to="llave" method="_on_llave_body_entered"]
 [connection signal="body_exited" from="llave" to="personatge" method="_on_llave_body_exited"]
 [connection signal="hide" from="llave/clau" to="personatge" method="_on_AnimatedSprite_hide"]

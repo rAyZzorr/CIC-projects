@@ -1,0 +1,176 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://PNG/Enemies/slimeGreen_move.png" type="Texture" id=1]
+[ext_resource path="res://PNG/Enemies/slimeGreen.png" type="Texture" id=2]
+[ext_resource path="res://PNG/Enemies/slimeGreen_dead.png" type="Texture" id=3]
+[ext_resource path="res://PNG/Enemies/slimeGreen_hit.png" type="Texture" id=4]
+[ext_resource path="res://Main Character/godot(4).png" type="Texture" id=5]
+[ext_resource path="res://Main Character/godot(5).png" type="Texture" id=6]
+[ext_resource path="res://Main Character/godot(6).png" type="Texture" id=7]
+[ext_resource path="res://pipiolo.gd" type="Script" id=8]
+[ext_resource path="res://Main Character/godot(3).png" type="Texture" id=9]
+[ext_resource path="res://Main Character/godot(2).png" type="Texture" id=10]
+[ext_resource path="res://Main Character/godot(1).png" type="Texture" id=11]
+[ext_resource path="res://GAME OVER/frames .png/0.png" type="Texture" id=12]
+[ext_resource path="res://GAME OVER/frames .png/8.png" type="Texture" id=13]
+[ext_resource path="res://GAME OVER/titulo.png" type="Texture" id=14]
+[ext_resource path="res://GAME OVER/castillo left.png" type="Texture" id=15]
+[ext_resource path="res://GAME OVER/castillo right.png" type="Texture" id=16]
+[ext_resource path="res://GAME OVER/frames .png/4.png" type="Texture" id=17]
+[ext_resource path="res://GAME OVER/castillo recto.png" type="Texture" id=18]
+[ext_resource path="res://GAME OVER/191594-200.png" type="Texture" id=19]
+[ext_resource path="res://GAME OVER/frames .png/9.png" type="Texture" id=20]
+[ext_resource path="res://GAME OVER/frames .png/1.png" type="Texture" id=21]
+[ext_resource path="res://GAME OVER/frames .png/2.png" type="Texture" id=22]
+[ext_resource path="res://GAME OVER/frames .png/6.png" type="Texture" id=23]
+[ext_resource path="res://GAME OVER/frames .png/10.png" type="Texture" id=24]
+[ext_resource path="res://GAME OVER/frames .png/5.png" type="Texture" id=25]
+[ext_resource path="res://GAME OVER/frames .png/3.png" type="Texture" id=26]
+[ext_resource path="res://GAME OVER/frames .png/7.png" type="Texture" id=27]
+[ext_resource path="res://dreta.gd" type="Script" id=28]
+[ext_resource path="res://esquerra.gd" type="Script" id=29]
+[ext_resource path="res://REPLAY.gd" type="Script" id=30]
+[ext_resource path="res://Personatge.tscn" type="PackedScene" id=31]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 20 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=5]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 14.75, 95.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 15, 96.75 )
+
+[node name="GAME OVER" type="Node2D"]
+
+[node name="DECORADO" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="DECORADO"]
+position = Vector2( 514, 301 )
+scale = Vector2( 2.0491, 2.15714 )
+frames = SubResource( 1 )
+frame = 20
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="DECORADO"]
+position = Vector2( 498, 327 )
+scale = Vector2( 0.3875, 0.389815 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="DECORADO"]
+position = Vector2( 80, 38 )
+rotation = -0.366208
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="DECORADO"]
+position = Vector2( 915, 339 )
+rotation = -0.00676724
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="DECORADO"]
+position = Vector2( 482, 84 )
+rotation = -0.366208
+frames = SubResource( 3 )
+playing = true
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="DECORADO"]
+position = Vector2( 83, 225 )
+rotation = 0.38657
+frames = SubResource( 3 )
+frame = 4
+playing = true
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="DECORADO"]
+position = Vector2( 928, 88 )
+rotation = 0.631841
+frames = SubResource( 3 )
+frame = 3
+playing = true
+
+[node name="Sprite" type="Sprite" parent="DECORADO"]
+position = Vector2( 519, 252 )
+scale = Vector2( 0.51875, 0.547222 )
+texture = ExtResource( 14 )
+
+[node name="REPLAY" type="TextureButton" parent="."]
+modulate = Color( 0.972549, 0.972549, 0.972549, 1 )
+anchor_top = -0.229
+anchor_right = 0.927
+anchor_bottom = 0.244
+margin_left = 406.0
+margin_top = 200.0
+margin_right = 606.0
+margin_bottom = 400.0
+texture_normal = ExtResource( 19 )
+script = ExtResource( 30 )
+
+[node name="pipiolo" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="pipiolo"]
+position = Vector2( 44, 524 )
+rotation = 0.522263
+scale = Vector2( 0.720312, 0.687234 )
+frames = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pipiolo"]
+shape = SubResource( 5 )
+
+[node name="dreta" type="Area2D" parent="."]
+script = ExtResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dreta"]
+position = Vector2( 15.75, 510.5 )
+shape = SubResource( 6 )
+
+[node name="esquerra" type="Area2D" parent="."]
+script = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="esquerra"]
+position = Vector2( 1008, 509 )
+shape = SubResource( 7 )
+
+[node name="personatge" parent="." instance=ExtResource( 31 )]
+visible = false
+position = Vector2( -2, 8 )
+
+[connection signal="pressed" from="REPLAY" to="REPLAY" method="_on_REPLAY_pressed"]
+[connection signal="area_exited" from="dreta" to="dreta" method="_on_dreta_area_exited"]
+[connection signal="area_entered" from="esquerra" to="esquerra" method="_on_esquerra_area_entered"]

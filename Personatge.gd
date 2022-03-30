@@ -41,20 +41,7 @@ func _physics_process(delta):
 	velocitat += gravetat * delta
 	velocitat = move_and_slide(velocitat, Vector2.UP)
 	anima(velocitat)
-	for index in get_slide_count():
-		var collision = get_slide_collision(index)
-		if collision.collider.name.begins_with("asteroid"):
-			var ruta = "/root/sc2/asteroides/%s"
-			var node = ruta % collision.collider.name
-			if get_node(node).get("estado") == true:
-#			if get_node("/root/sc2/asteroides/asteroid1").get("estado") == true:
-				get_tree().change_scene("res://sc1.tscn")
-				position = Vector2(40, 520)
-			else:
-				pass
-#		if collision.collider.name.begins_with("alien"):
-#			get_tree().change_scene("res://sc1.tscn")
-#			position = Vector2(40, 520)
+	
 func anima(velocitat: Vector2):
 	var animacio = $AnimatedSprite
 	if velocitat.x > 0:
@@ -71,18 +58,21 @@ func anima(velocitat: Vector2):
 	if abs(velocitat.x) < 0.5:
 		animacio.play('default')
 
-func _on_Lava_body_entered(_body):
-	position = Vector2(40, 520)
+func _on_Lava_body_entered(body):
+	if body.name == "personatge":
+		get_tree().change_scene("res://GAME OVER.tscn")
 #	get_tree().quit()
 
 func _on_Escaleras_body_entered(_body):
 	position = Vector2(950, 225)
 	salt = Vector2.UP * 600
 
-func _on_problemasp2_body_entered(_body):
-	position = Vector2(40, 520)
-	llave = false
-	salt = Vector2.UP * 450
+func _on_problemasp2_body_entered(body):
+	if body.name == "personatge":
+		
+		llave = false
+		salt = Vector2.UP * 450
+		get_tree().change_scene("res://GAME OVER.tscn")
 	
 		
 func _on_llave_body_exited(_body):
@@ -108,7 +98,7 @@ func _on_nave_body_entered(_body):
 
 
 func reset():
-	get_tree().change_scene("res://sc1.tscn")
+	get_tree().change_scene("res://GAME OVER.tscn")
 	position = Vector2(40, 520)
 
 

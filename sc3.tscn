@@ -38,6 +38,7 @@ script = ExtResource( 15 )
 position = Vector2( 489, -298 )
 scale = Vector2( 1, 1.00556 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 offset = Vector2( 471, 312 )
 
@@ -134,6 +135,7 @@ polygon = PoolVector2Array( 902, 389, 913, 389, 918, 395, 918, 419, 925, 419, 93
 position = Vector2( 947, 514 )
 scale = Vector2( 0.760828, 0.855078 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="Sprite" type="Sprite" parent="nave"]

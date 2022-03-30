@@ -147,7 +147,7 @@ modulate = Color( 1, 1, 1, 0.443137 )
 position = Vector2( 512.5, 256 )
 scale = Vector2( 2.06225, 1.78873 )
 frames = SubResource( 5 )
-frame = 6
+frame = 12
 playing = true
 
 [node name="fake-fuego" type="AnimatedSprite" parent="fondo"]
@@ -195,7 +195,7 @@ material = SubResource( 9 )
 position = Vector2( 729, 542 )
 scale = Vector2( 0.0824196, 1 )
 frames = SubResource( 7 )
-frame = 7
+frame = 2
 playing = true
 
 [node name="crat-top" type="Sprite" parent="crateres"]
@@ -234,7 +234,6 @@ __meta__ = {
 position = Vector2( 948, 522 )
 scale = Vector2( 0.760828, 0.855078 )
 frames = SubResource( 2 )
-frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="nave"]
@@ -432,7 +431,7 @@ shape = SubResource( 4 )
 position = Vector2( 981, 449 )
 scale = Vector2( 0.263636, 0.270833 )
 frames = SubResource( 3 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="personatge" parent="." instance=ExtResource( 58 )]
@@ -454,33 +453,33 @@ position = Vector2( -216, 378 )
 position = Vector2( -216, 416 )
 
 [node name="Alien7" parent="Aliens bons" instance=ExtResource( 73 )]
-position = Vector2( -222, 67 )
+position = Vector2( -222, 70 )
 
 [node name="Alien8" parent="Aliens bons" instance=ExtResource( 73 )]
 position = Vector2( -365, -14 )
 
 [node name="Alien9" parent="Aliens bons" instance=ExtResource( 73 )]
-position = Vector2( 130, 211 )
+position = Vector2( 130, 220 )
 
 [node name="Alien10" parent="Aliens bons" instance=ExtResource( 73 )]
-position = Vector2( 49, 211 )
+position = Vector2( 50, 219 )
 
 [node name="Alien11" parent="Aliens bons" instance=ExtResource( 73 )]
 position = Vector2( -216, 341 )
 
 [node name="Alien12" parent="Aliens bons" instance=ExtResource( 73 )]
-position = Vector2( 5, -2 )
+position = Vector2( 5, 11 )
 
 [node name="Alien2" parent="Aliens bons" instance=ExtResource( 73 )]
-position = Vector2( -387, 200 )
+position = Vector2( -387, 209 )
 
 [node name="Alien" parent="Aliens bons" instance=ExtResource( 73 )]
-position = Vector2( -533, 96 )
+position = Vector2( -531, 105 )
 
 [node name="Alien4" parent="Aliens bons" instance=ExtResource( 73 )]
-position = Vector2( -696, 58 )
+position = Vector2( -700, 69 )
 
 [node name="Alien5" parent="Aliens bons" instance=ExtResource( 73 )]
-position = Vector2( 81, -2.00002 )
+position = Vector2( 82, 9 )
 
 [connection signal="body_entered" from="Foc" to="personatge" method="_on_Foc_body_entered"]
