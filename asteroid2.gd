@@ -5,11 +5,13 @@ var velocitat_base = 200
 var velocitat = Vector2.ZERO
 var gravetat = Vector2.DOWN * 50
 var estado = false
+var posicio_inicial
 
 
 func _ready():
+	posicio_inicial = position
 	anima("ready")
-	position = Vector2(50, 100)
+
 func _physics_process(delta):
 	if is_on_floor():
 		for index in get_slide_count():
@@ -17,7 +19,7 @@ func _physics_process(delta):
 			if collision:
 				if collision.collider.name.begins_with("personatge"):
 					anima("destroy")
-					position = Vector2(50, 560)
+					position = Vector2(posicio_inicial.x, 560)
 					get_node("CollisionPolygon2D").set_deferred("disabled", true)
 					estado = true
 				elif collision.collider.name.begins_with("asteroid"):

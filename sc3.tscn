@@ -1,15 +1,9 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://PNG/Ground/Grass/grassMid.png" type="Texture" id=1]
-[ext_resource path="res://PNG/Sprites X2/Meteors/spaceMeteors_002.png" type="Texture" id=2]
-[ext_resource path="res://PNG/Sprites X2/Meteors/spaceMeteors_004.png" type="Texture" id=3]
+[ext_resource path="res://new_aster.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sky2.jpg" type="Texture" id=4]
-[ext_resource path="res://PNG/Sprites X2/Meteors/broke3.png" type="Texture" id=5]
-[ext_resource path="res://PNG/Sprites X2/Meteors/broke.png" type="Texture" id=6]
-[ext_resource path="res://PNG/Sprites X2/Meteors/spaceMeteors_003.png" type="Texture" id=7]
-[ext_resource path="res://PNG/Sprites X2/Meteors/spaceMeteors_001.png" type="Texture" id=8]
 [ext_resource path="res://sky1.jpg" type="Texture" id=9]
-[ext_resource path="res://PNG/Sprites X2/Meteors/broke2.png" type="Texture" id=10]
 [ext_resource path="res://PNG/Sprites X2/Effects/spaceEffects_004.png" type="Texture" id=11]
 [ext_resource path="res://PNG/Sprites X2/Ships/spaceShips_002.png" type="Texture" id=12]
 [ext_resource path="res://PNG/Sprites X2/Effects/spaceEffects_002.png" type="Texture" id=13]
@@ -26,14 +20,6 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 758.5, 28 )
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "default",
-"speed": 3.0
-} ]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -52,7 +38,6 @@ script = ExtResource( 15 )
 position = Vector2( 489, -298 )
 scale = Vector2( 1, 1.00556 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 offset = Vector2( 471, 312 )
 
@@ -140,247 +125,6 @@ position = Vector2( 107, 570 )
 scale = Vector2( 0.554688, 0.46875 )
 texture = ExtResource( 1 )
 
-[node name="asteroides" type="Node2D" parent="."]
-
-[node name="asteroid1" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 468, 34 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid1"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid1"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid2" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 399, -62 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid2"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid2"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid3" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 309, 13 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid3"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid3"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid4" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 247, -61 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid4"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid4"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid5" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 181, 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid5"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid5"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid6" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 103, -24 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid6"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid6"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid7" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 565, -6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid7"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid7"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid8" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 17, -15 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid8"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid8"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid10" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( -30, 33 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid10"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid10"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid9" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( -108, -5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid9"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid9"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid11" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 137, -138 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid11"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid11"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid13" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 370, 88 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid13"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid13"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-frame = 1
-
-[node name="asteroid14" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 321, -116 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid14"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid14"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid16" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 634, 46 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid16"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid16"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid18" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 504, -98 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid18"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid18"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid19" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( -37, -81 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid19"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid19"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
-[node name="asteroid20" type="KinematicBody2D" parent="asteroides"]
-position = Vector2( 678, -36 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="asteroides/asteroid20"]
-polygon = PoolVector2Array( 167, -72, 186, -64, 196, -47, 195, -29, 185, -13, 167, -10, 147, -16, 138, -31, 136, -50, 149, -63 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="asteroides/asteroid20"]
-position = Vector2( 166, -41 )
-scale = Vector2( 0.141686, 0.136564 )
-frames = SubResource( 3 )
-
 [node name="nave" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="nave"]
@@ -390,13 +134,101 @@ polygon = PoolVector2Array( 902, 389, 913, 389, 918, 395, 918, 419, 925, 419, 93
 position = Vector2( 947, 514 )
 scale = Vector2( 0.760828, 0.855078 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Sprite" type="Sprite" parent="nave"]
 position = Vector2( 947.25, 464.25 )
 scale = Vector2( 0.541667, 0.696759 )
 texture = ExtResource( 12 )
+
+[node name="ATEORIDS" type="Node2D" parent="."]
+
+[node name="new_aster" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 662, -166 )
+
+[node name="new_aster3" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 486, -192 )
+gravetat = 250
+
+[node name="new_aster4" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 536, -109 )
+gravetat = 250
+
+[node name="new_aster5" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 898, -178 )
+gravetat = 150
+
+[node name="new_aster6" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 969, -114 )
+gravetat = 100
+
+[node name="new_aster7" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 923, -40 )
+gravetat = 100
+
+[node name="new_aster8" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 847, -103 )
+gravetat = 120
+
+[node name="new_aster9" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 808, -30 )
+gravetat = 120
+
+[node name="new_aster10" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 701, -44 )
+gravetat = 130
+
+[node name="new_aster11" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 609, -14 )
+gravetat = 140
+
+[node name="new_aster12" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 740, -126 )
+gravetat = 140
+
+[node name="new_aster13" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 611, -110 )
+gravetat = 150
+
+[node name="new_aster14" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 409, -27 )
+gravetat = 180
+
+[node name="new_aster15" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 497, -28 )
+gravetat = 160
+
+[node name="new_aster16" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 229, -126 )
+gravetat = 250
+
+[node name="new_aster17" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 327, -41 )
+gravetat = 230
+
+[node name="new_aster18" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 351, -129 )
+gravetat = 220
+
+[node name="new_aster19" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 249, -39 )
+gravetat = 260
+
+[node name="new_aster20" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 118, -115 )
+gravetat = 300
+
+[node name="new_aster21" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 176, -61 )
+gravetat = 240
+
+[node name="new_aster22" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 82, -6 )
+gravetat = 300
+
+[node name="new_aster2" parent="ATEORIDS" instance=ExtResource( 2 )]
+position = Vector2( 446, -106 )
+gravetat = 170
 
 [node name="personatge" parent="." instance=ExtResource( 14 )]
 

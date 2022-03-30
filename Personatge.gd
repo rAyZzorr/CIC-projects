@@ -116,3 +116,6 @@ func reset():
 func _on_Foc_body_entered(body):
 	if body.name.begins_with("personatge"):
 		salt += Vector2.UP*900
+
+
+

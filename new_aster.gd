@@ -2,17 +2,16 @@ extends Area2D
 
 
 
-var gravetat =  50
+export var gravetat =  200
 var estado = false
 
 
 func _ready():
 	anima("ready")
-	position = Vector2(50, 100)
+
 	
 func _physics_process(delta):
 	position.y += gravetat * delta
-	anima("ready")
 	
 func _on_new_aster_area_entered(area):
 	pass # Replace with function body.
@@ -21,11 +20,14 @@ func _on_new_aster_area_entered(area):
 func _on_new_aster_body_entered(body):
 	if body.name == "personatge":
 		body.reset()
-	elif body.name == "suelo":
-		position.y = 560
+	elif body.name == "suelo" and estado == false:
+		position.y = 510
+		gravetat = 0
 		get_node("CollisionPolygon2D").set_deferred("disabled", true)
 		anima("destroy")
-		
+		estado = true
+	elif estado == true:
+		pass
 
 		
 func anima(options):
@@ -36,3 +38,10 @@ func anima(options):
 		animacio.play('destroy')
 		if animacio.frame == 3:
 			animacio.stop()
+			print("done")
+
+
+func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == 'destroy':
+		$AnimatedSprite.stop()
+		$AnimatedSprite.frame = 3
