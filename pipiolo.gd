@@ -3,10 +3,9 @@ extends Area2D
 var lado = "right"
 func _ready():
 	rotation_degrees = 0
-func _physics_process(delta):
+func _physics_process(_delta):
 	anima()
 	if lado == "left":
-		print("true")
 		position.x -= 5
 	if lado == "right":
 		position.x += 5

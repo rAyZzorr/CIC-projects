@@ -22,8 +22,7 @@
 [ext_resource path="res://PNG/portal/4.png" type="Texture" id=20]
 [ext_resource path="res://PNG/portal/2.png" type="Texture" id=21]
 [ext_resource path="res://PNG/portal/7.png" type="Texture" id=22]
-[ext_resource path="res://PNG/Sprites X2/Effects/spaceEffects_002.png" type="Texture" id=23]
-[ext_resource path="res://PNG/Sprites X2/Effects/spaceEffects_004.png" type="Texture" id=24]
+[ext_resource path="res://techo.gd" type="Script" id=23]
 [ext_resource path="res://PNG/estrellas/png/1.png" type="Texture" id=25]
 [ext_resource path="res://PNG/estrellas/png/3.png" type="Texture" id=26]
 [ext_resource path="res://PNG/estrellas/png/6.png" type="Texture" id=27]
@@ -43,7 +42,6 @@
 [ext_resource path="res://PNG/estrellas/png/18.png" type="Texture" id=41]
 [ext_resource path="res://PNG/estrellas/png/21.png" type="Texture" id=42]
 [ext_resource path="res://PNG/estrellas/png/4.png" type="Texture" id=43]
-[ext_resource path="res://PNG/Sprites X2/Effects/spaceEffects_018.png" type="Texture" id=44]
 [ext_resource path="res://PNG/estrellas/png/10.png" type="Texture" id=45]
 [ext_resource path="res://PNG/estrellas/png/20.png" type="Texture" id=46]
 [ext_resource path="res://PNG/estrellas/png/12.png" type="Texture" id=47]
@@ -59,6 +57,7 @@
 [ext_resource path="res://top-crater.png" type="Texture" id=57]
 [ext_resource path="res://Personatge.tscn" type="PackedScene" id=58]
 [ext_resource path="res://sc4.gd" type="Script" id=59]
+[ext_resource path="res://Portal.gd" type="Script" id=60]
 [ext_resource path="res://alien.tscn" type="PackedScene" id=73]
 
 [sub_resource type="SpriteFrames" id=5]
@@ -67,14 +66,6 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 8.0
-} ]
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 44 ) ],
-"loop": true,
-"name": "default",
-"speed": 40.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -124,10 +115,19 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 17.5, 110.75 )
+extents = Vector2( 17.5, 91.875 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 9, 803.5 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 515.5, 15.5 )
 
 [node name="sc4" type="Node2D"]
 script = ExtResource( 59 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="fondo" type="Node2D" parent="."]
 __meta__ = {
@@ -142,21 +142,501 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="fondo2" type="Sprite" parent="fondo"]
+position = Vector2( 1533, 257 )
+scale = Vector2( 1.39782, 1.24092 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="fondo4" type="Sprite" parent="fondo"]
+position = Vector2( -521, 254 )
+rotation = 3.13828
+scale = Vector2( 1.39782, 1.24092 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
 [node name="fondostars" type="AnimatedSprite" parent="fondo"]
 modulate = Color( 1, 1, 1, 0.443137 )
-position = Vector2( 512.5, 256 )
+position = Vector2( 508, 256 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 15
+playing = true
+
+[node name="fondostars3" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -500, 259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 14
+playing = true
+
+[node name="fondostars4" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 512, -252 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 13
+playing = true
+
+[node name="fondostars10" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -517, -259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 13
+playing = true
+
+[node name="fondostars6" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 512, -366 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 13
+playing = true
+
+[node name="fondostars11" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -507, -369 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 13
+playing = true
+
+[node name="fondostars7" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -753 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 13
+playing = true
+
+[node name="fondostars8" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -753 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 13
+playing = true
+
+[node name="fondostars9" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -753 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 12
+playing = true
+
+[node name="fondostars16" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -753 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 11
+playing = true
+
+[node name="fondostars17" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -753 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 11
+playing = true
+
+[node name="fondostars18" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -753 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 10
+playing = true
+
+[node name="fondostars26" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -753 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 10
+playing = true
+
+[node name="fondostars37" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -753 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 9
+playing = true
+
+[node name="fondostars41" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 8
+playing = true
+
+[node name="fondostars42" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 8
+playing = true
+
+[node name="fondostars43" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 8
+playing = true
+
+[node name="fondostars44" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 7
+playing = true
+
+[node name="fondostars45" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 6
+playing = true
+
+[node name="fondostars46" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 5
+playing = true
+
+[node name="fondostars60" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 5
+playing = true
+
+[node name="fondostars61" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 5
+playing = true
+
+[node name="fondostars62" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
 scale = Vector2( 2.06225, 1.78873 )
 frames = SubResource( 5 )
 frame = 4
 playing = true
 
-[node name="fake-fuego" type="AnimatedSprite" parent="fondo"]
-visible = false
-modulate = Color( 1, 0.141176, 0.937255, 1 )
-position = Vector2( 728, 465 )
-rotation = 3.13883
-scale = Vector2( 1.32576, 4.92793 )
-frames = SubResource( 6 )
+[node name="fondostars63" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 515, -1257 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 4
+playing = true
+
+[node name="fondostars38" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1539, -1259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 8
+playing = true
+
+[node name="fondostars47" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1539, -1259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 7
+playing = true
+
+[node name="fondostars48" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1539, -1259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 7
+playing = true
+
+[node name="fondostars49" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1539, -1259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 6
+playing = true
+
+[node name="fondostars50" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1539, -1259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 6
+playing = true
+
+[node name="fondostars51" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1539, -1259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 5
+playing = true
+
+[node name="fondostars52" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1539, -1259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 5
+playing = true
+
+[node name="fondostars53" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -505, -1271 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 4
+playing = true
+
+[node name="fondostars54" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -505, -1271 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="fondostars55" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -505, -1271 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="fondostars56" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -505, -1271 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="fondostars57" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -505, -1271 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="fondostars58" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -505, -1271 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="fondostars59" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -507, -1267 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="fondostars20" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1531, -750 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 10
+playing = true
+
+[node name="fondostars21" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1531, -750 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 9
+playing = true
+
+[node name="fondostars22" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1531, -750 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 9
+playing = true
+
+[node name="fondostars23" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1531, -750 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 8
+playing = true
+
+[node name="fondostars24" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1531, -750 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 8
+playing = true
+
+[node name="fondostars25" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1531, -363 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 8
+playing = true
+
+[node name="fondostars27" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1538, -256 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 6
+playing = true
+
+[node name="fondostars28" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1538, -485 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 5
+playing = true
+
+[node name="fondostars29" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -492 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 5
+playing = true
+
+[node name="fondostars30" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -520, -499 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 4
+playing = true
+
+[node name="fondostars31" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -520, -267 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 4
+playing = true
+
+[node name="fondostars32" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 519, -277 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 4
+playing = true
+
+[node name="fondostars34" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 516, -109 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="fondostars35" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1552, -109 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="fondostars36" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1539, 259 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="fondostars33" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 1548, -274 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="fondostars13" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -520, -763 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 11
+playing = true
+
+[node name="fondostars14" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -520, -763 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 10
+playing = true
+
+[node name="fondostars15" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -520, -763 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 10
+playing = true
+
+[node name="fondostars12" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -510, -756 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 11
+playing = true
+
+[node name="fondostars19" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -510, -756 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 11
+playing = true
+
+[node name="fondostars5" type="AnimatedSprite" parent="fondo"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( -510, -107 )
+scale = Vector2( 2.06225, 1.78873 )
+frames = SubResource( 5 )
+frame = 13
 playing = true
 
 [node name="suelo" type="StaticBody2D" parent="."]
@@ -171,6 +651,16 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="suelo"]
 position = Vector2( 510.5, 555.5 )
 scale = Vector2( 8.03906, 0.710938 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="suelo"]
+position = Vector2( 1538, 555.75 )
+scale = Vector2( 8.03906, 0.714844 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="suelo"]
+position = Vector2( -514, 555 )
+scale = Vector2( 8.03906, 0.714844 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="suelo"]
@@ -195,6 +685,7 @@ material = SubResource( 9 )
 position = Vector2( 729, 542 )
 scale = Vector2( 0.0824196, 1 )
 frames = SubResource( 7 )
+frame = 8
 playing = true
 
 [node name="crat-top" type="Sprite" parent="crateres"]
@@ -233,7 +724,7 @@ __meta__ = {
 position = Vector2( 948, 522 )
 scale = Vector2( 0.760828, 0.855078 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="nave"]
@@ -419,6 +910,7 @@ texture = ExtResource( 14 )
 
 [node name="Portal" type="Area2D" parent="."]
 position = Vector2( 11, 10 )
+script = ExtResource( 60 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -431,7 +923,7 @@ shape = SubResource( 4 )
 position = Vector2( 981, 449 )
 scale = Vector2( 0.263636, 0.270833 )
 frames = SubResource( 3 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="personatge" parent="." instance=ExtResource( 58 )]
@@ -442,13 +934,19 @@ current = true
 zoom = Vector2( 0.662, 0.681 )
 
 [node name="Foc" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foc"]
-position = Vector2( 728, 376 )
+position = Vector2( 728, 394.875 )
 shape = SubResource( 12 )
 
 [node name="Aliens bons" type="Node2D" parent="."]
 position = Vector2( 820, 81 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Alien3" parent="Aliens bons" instance=ExtResource( 73 )]
 position = Vector2( -216, 378 )
@@ -486,5 +984,34 @@ position = Vector2( -700, 69 )
 [node name="Alien5" parent="Aliens bons" instance=ExtResource( 73 )]
 position = Vector2( 82, 9 )
 
-[connection signal="body_entered" from="Portal" to="personatge" method="_on_Portal_body_entered"]
+[node name="parets" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parets"]
+position = Vector2( -5, -211.5 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="parets"]
+position = Vector2( 1029, -201 )
+shape = SubResource( 13 )
+
+[node name="techo" type="Area2D" parent="."]
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="techo"]
+position = Vector2( 520.5, -1013.5 )
+shape = SubResource( 14 )
+
+[node name="Sprite" type="Sprite" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]
 [connection signal="body_entered" from="Foc" to="personatge" method="_on_Foc_body_entered"]
+[connection signal="body_entered" from="techo" to="techo" method="_on_techo_body_entered"]

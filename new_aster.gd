@@ -13,7 +13,7 @@ func _ready():
 func _physics_process(delta):
 	position.y += gravetat * delta
 	
-func _on_new_aster_area_entered(area):
+func _on_new_aster_area_entered(_area):
 	pass # Replace with function body.
 
 

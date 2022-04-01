@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="G 0 D 0t"
+run/main_scene="res://beggining.tscn"
 
 [input]
 

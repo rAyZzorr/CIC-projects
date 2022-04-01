@@ -6,5 +6,6 @@ func _on_Alien_body_entered(body):
 
 
 func _on_Alien_area_entered(area):
+	get_node("/root/sc4/Portal").number += 1
 	area.queue_free()
 	queue_free()

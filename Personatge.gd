@@ -6,15 +6,17 @@ var b
 var be
 
 
+
+
 var llave = false
 var velocitat_base = 200
 var velocitat = Vector2.ZERO
 var gravetat = Vector2.DOWN * 980
-var salt = Vector2.UP * 450
+var salt = Vector2.UP * 400
 var lado = "right"
 var contador_balas = 0
 var on_escala = false
-
+var muelle = false
 
 func _ready():
 	position = Vector2(40, 520)
@@ -41,6 +43,7 @@ func _physics_process(delta):
 			velocitat += Vector2.LEFT * velocitat_base
 		if Input.is_action_just_pressed("mou_amunt") and is_on_floor():
 			velocitat += salt
+			muelle = false
 		velocitat += gravetat * delta
 		velocitat = move_and_slide(velocitat, Vector2.UP)
 		anima(velocitat)
@@ -67,17 +70,19 @@ func _on_Lava_body_entered(body):
 	if body.name == "personatge":
 		get_tree().change_scene("res://GAME OVER.tscn")
 func _on_Escaleras_body_entered(_body):
+	$AnimatedSprite.play("default")
+	$AnimatedSprite.flip_h = true
 	on_escala = true
 func _on_conexion_body_entered(body):
 	if body.name == "personatge":
 		position = Vector2(950, 210)
-		salt = Vector2.UP * 600
+#		salt = Vector2.UP * 600
 		on_escala = false
 func _on_problemasp2_body_entered(body):
 	if body.name == "personatge":
 		
 		llave = false
-		salt = Vector2.UP * 450
+		salt = Vector2.UP * 400
 		get_tree().change_scene("res://GAME OVER.tscn")	
 func _on_llave_body_exited(_body):
 	llave = true
@@ -100,7 +105,13 @@ func reset():
 	position = Vector2(40, 520)
 func _on_Foc_body_entered(body):
 	if body.name.begins_with("personatge"):
-		salt += Vector2.UP*900
-func _on_Portal_body_entered(body):
+		on_escala = true
+func _on_muelles_body_entered(body):
 	if body.name == "personatge":
-		get_tree().change_scene("res://GAME OVER.tscn")
+		salt = Vector2.UP * 600
+		muelle = true
+func _on_muelles_body_exited(body):
+	if body.name == "personatge":
+		salt = Vector2.UP * 400
+		muelle = false
+
