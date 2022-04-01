@@ -277,4 +277,8 @@ gravetat = 170
 [node name="personatge" parent="." instance=ExtResource( 15 )]
 position = Vector2( 81, 513 )
 
+[node name="Camera2D" type="Camera2D" parent="personatge"]
+current = true
+zoom = Vector2( 0.586, 0.633 )
+
 [connection signal="body_entered" from="portal_1" to="personatge" method="_on_portal_1_body_entered"]

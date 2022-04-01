@@ -60,7 +60,7 @@ animations = [ {
 animations = [ {
 "frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "default",
+"name": "camina",
 "speed": 5.0
 } ]
 
@@ -80,14 +80,14 @@ extents = Vector2( 15, 96.75 )
 position = Vector2( 514, 301 )
 scale = Vector2( 2.0491, 2.15714 )
 frames = SubResource( 1 )
-frame = 20
+frame = 5
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="DECORADO"]
 position = Vector2( 498, 327 )
 scale = Vector2( 0.3875, 0.389815 )
 frames = SubResource( 2 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="DECORADO"]
@@ -142,13 +142,17 @@ texture_normal = ExtResource( 19 )
 script = ExtResource( 30 )
 
 [node name="pipiolo" type="Area2D" parent="."]
+position = Vector2( 44, 533 )
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="pipiolo"]
-position = Vector2( 44, 524 )
 rotation = 0.522263
 scale = Vector2( 0.720312, 0.687234 )
 frames = SubResource( 4 )
+animation = "camina"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pipiolo"]
 shape = SubResource( 5 )
@@ -172,5 +176,5 @@ visible = false
 position = Vector2( -2, 8 )
 
 [connection signal="pressed" from="REPLAY" to="REPLAY" method="_on_REPLAY_pressed"]
-[connection signal="area_exited" from="dreta" to="dreta" method="_on_dreta_area_exited"]
+[connection signal="area_entered" from="dreta" to="dreta" method="_on_dreta_area_entered"]
 [connection signal="area_entered" from="esquerra" to="esquerra" method="_on_esquerra_area_entered"]
