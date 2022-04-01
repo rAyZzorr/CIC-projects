@@ -51,9 +51,6 @@ extents = Vector2( 6, 226.5 )
 
 [node name="sc2" type="Node2D"]
 script = ExtResource( 37 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="fondo" type="Node2D" parent="."]
 position = Vector2( 0, 10 )
@@ -391,9 +388,10 @@ position = Vector2( 446, -106 )
 gravetat = 170
 
 [node name="personatge" parent="." instance=ExtResource( 15 )]
-position = Vector2( 81, 513 )
+position = Vector2( 81, 511 )
 
 [node name="Camera2D" type="Camera2D" parent="personatge"]
+position = Vector2( 92, -72 )
 current = true
 zoom = Vector2( 0.586, 0.633 )
 

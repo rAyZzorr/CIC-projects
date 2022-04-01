@@ -48,9 +48,10 @@ func _physics_process(delta):
 		velocitat = move_and_slide(velocitat, Vector2.UP)
 		anima(velocitat)
 	elif on_escala == true:
-		velocitat.x = 0
-		velocitat += Vector2.UP*2
-		velocitat = move_and_slide(velocitat, Vector2.UP)
+#		velocitat.x = 0
+#		velocitat += Vector2.UP*2
+#		velocitat = move_and_slide(velocitat, Vector2.UP)
+		position.y -= 3
 func anima(velocitat: Vector2):
 	var animacio = $AnimatedSprite
 	if velocitat.x > 0:
@@ -89,7 +90,7 @@ func _on_llave_body_exited(_body):
 	print(llave)
 func _on_puerta_body_entered(_body):
 	if llave == true:
-		get_tree().change_scene("res://sc2.tscn")
+		get_tree().change_scene("res://sc1-2.tscn")
 	else:
 		position = Vector2(950, 225)
 func _on_portal_1_body_entered(body):
@@ -98,8 +99,10 @@ func _on_portal_1_body_entered(body):
 	else:
 		print("inside")
 		get_tree().change_scene("res://sc3.tscn")
-func _on_nave_body_entered(_body):
-	get_tree().change_scene("res://sc4.tscn")
+func _on_nave_body_entered(body):
+	if body.name == "personatge":
+		on_escala = true
+		visible = false
 func reset():
 	get_tree().change_scene("res://GAME OVER.tscn")
 	position = Vector2(40, 520)

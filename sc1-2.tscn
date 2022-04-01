@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Main Character/godot(4).png" type="Texture" id=3]
+[ext_resource path="res://Main Character/godot(1).png" type="Texture" id=4]
+[ext_resource path="res://Main Character/godot(2).png" type="Texture" id=5]
+[ext_resource path="res://Main Character/godot(6).png" type="Texture" id=6]
+[ext_resource path="res://Main Character/godot(3).png" type="Texture" id=7]
+[ext_resource path="res://Main Character/godot(5).png" type="Texture" id=8]
+[ext_resource path="res://pasillo.webp" type="Texture" id=9]
+[ext_resource path="res://conect.gd" type="Script" id=10]
+[ext_resource path="res://senior.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=5]
+height = 72.0
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 11, 137 )
+
+[node name="sc1-2" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 514, 361 )
+scale = Vector2( 2.26889, 1.65222 )
+texture = ExtResource( 9 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 1.0
+margin_top = -54.0
+margin_right = 1034.0
+margin_bottom = 209.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -1.0
+margin_top = 543.0
+margin_right = 1032.0
+margin_bottom = 806.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="senior" type="Area2D" parent="."]
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="senior"]
+position = Vector2( 42, 493 )
+scale = Vector2( 0.765625, 0.782979 )
+frames = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="senior"]
+position = Vector2( 39, 498 )
+shape = SubResource( 5 )
+
+[node name="conect" type="Area2D" parent="."]
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conect"]
+position = Vector2( 1025, 409 )
+shape = SubResource( 6 )
+
+[connection signal="area_entered" from="conect" to="conect" method="_on_conect_area_entered"]

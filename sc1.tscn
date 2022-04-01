@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://PNG/Ground/Stone/stone.png" type="Texture" id=1]
 [ext_resource path="res://PNG/Ground/Stone/stoneHalf.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://pont.png" type="Texture" id=29]
 [ext_resource path="res://pal.gd" type="Script" id=30]
 [ext_resource path="res://PNG/Tiles/chain.png" type="Texture" id=31]
+[ext_resource path="res://puerta.gd" type="Script" id=32]
 [ext_resource path="res://no_key.png" type="Texture" id=33]
 [ext_resource path="res://key.png" type="Texture" id=34]
 
@@ -149,18 +150,28 @@ extents = Vector2( 19, 44.25 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=39]
@@ -1891,12 +1902,9 @@ scale = Vector2( 0.238283, 0.394532 )
 frames = SubResource( 9 )
 
 [node name="conexion" type="Area2D" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="conexion"]
-position = Vector2( 1017.5, 278 )
+position = Vector2( 1015, 246 )
 shape = SubResource( 16 )
 
 [node name="peldaños-p2" type="Node2D" parent="."]
@@ -2128,6 +2136,7 @@ polygon = PoolVector2Array( 770, 274, 773.79, 267.219, 791, 240, 811, 274, 833, 
 
 [node name="puerta" type="Area2D" parent="."]
 position = Vector2( -89, 0 )
+script = ExtResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2140,15 +2149,20 @@ shape = SubResource( 13 )
 position = Vector2( 28.5, 165 )
 scale = Vector2( 0.414063, 0.53125 )
 frames = SubResource( 12 )
+animation = "open"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="puerta"]
 position = Vector2( 28.5, 236 )
 scale = Vector2( 0.414063, 0.609375 )
 frames = SubResource( 11 )
+animation = "open"
 
 [node name="llave" type="Area2D" parent="."]
 position = Vector2( -176, -47 )
 script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="indicador_llave" type="AnimatedSprite" parent="llave"]
 visible = false
@@ -2171,7 +2185,7 @@ position = Vector2( 577, 101 )
 rotation = 0.53275
 scale = Vector2( 0.3125, 0.210938 )
 frames = SubResource( 14 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="llave"]
@@ -2295,6 +2309,7 @@ playing = true
 [connection signal="body_entered" from="Escaleras" to="personatge" method="_on_Escaleras_body_entered"]
 [connection signal="body_entered" from="conexion" to="personatge" method="_on_conexion_body_entered"]
 [connection signal="body_entered" from="problemas-p2" to="personatge" method="_on_problemasp2_body_entered"]
+[connection signal="body_entered" from="puerta" to="puerta" method="_on_puerta_body_entered"]
 [connection signal="body_entered" from="puerta" to="personatge" method="_on_puerta_body_entered"]
 [connection signal="body_entered" from="llave" to="llave" method="_on_llave_body_entered"]
 [connection signal="body_exited" from="llave" to="llave" method="_on_llave_body_exited"]
